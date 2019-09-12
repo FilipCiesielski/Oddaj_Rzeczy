@@ -16,8 +16,12 @@ nav {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 2rem;
+
     li {
       margin-left: 2rem;
     }
   }
+}
+.nav{
+  width: 100%;
 }

@@ -25,13 +25,13 @@ class Navigation extends Component{
         }
         return(
        <>
-           <nav className={"container"}>
+           <nav className={"container nav"}>
            <ul className={"login"}>
                <li><NavLink style={styleLogin} activeStyle={selectedStyleLogin} to={"/logowanie"}>Zaloguj</NavLink></li>
                <li><NavLink style={styleLogin} activeStyle={selectedStyleLogin} to={"/rejestracja"}>Załóż konto</NavLink></li>
            </ul>
            <ul className={"menu"}>
-               <li><Link style={styleMenu} activeClass={selectedStyleMenu} exact to={"/start"}>Start</Link></li>
+               <li><NavLink style={styleMenu} activeStyle={selectedStyleMenu} exact to={"/"}>Start</NavLink></li>
                <li><Link activeClass="active" className="test2" to="ThreeColumns" spy={true} smooth={true} duration={500}>O co chodzi?</Link></li>
                <li><Link activeClass="active" className="test2" to="About" spy={true} smooth={true} duration={500}>O Nas</Link></li>
                <li><Link activeClass="active" className="test2" to="Organisation" spy={true} smooth={true} duration={500}>Fundacja i organizacje</Link></li>

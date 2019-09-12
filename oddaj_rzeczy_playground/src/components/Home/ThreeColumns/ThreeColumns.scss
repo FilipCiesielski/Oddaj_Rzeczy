@@ -1,6 +1,24 @@
+@import "../../../SCSS/settings/colors";
+
 .threeColumns{
     height: 500px;
     margin-bottom: 20px;
     border: 2px solid black;
+  background-color: map_get($colors,"yellow");
+  width: 100%;
+  height: 19rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+article{
+    width: 20%;
+    text-align: center;
+  span{
+    font-size: 5rem;
+    h4{
+      margin: 2rem;
+    }
+  }
+}
 
   }
