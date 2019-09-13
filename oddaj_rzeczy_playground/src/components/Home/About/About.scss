@@ -1,6 +1,56 @@
+@import "../../../scss/settings/colors";
+
 .about{
-  height: 500px;
-  margin-bottom: 20px;
-  border: 2px solid black;
+  width: 100%;
+  height: 53.5rem;
+   color: map_get($colors,"darkgrey");
+  .aboutPhoto {
+    background-image: url("../../../assets/assets/People.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+  }
+
+}
+
+.aboutArticle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  background-color: map_get($colors,"white");
+  span{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .deco{
+
+    background-image: url("../../../assets/assets/Decoration.svg");
+    width: 100%;
+    height: 2rem;
+    margin: 1rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+  }
+  p{
+    text-align: center;
+    width: 60%;
+    font-size: 1.5rem;
+    line-height:2.5rem;
+    margin:2rem;
+    color: map_get($colors,"darkgrey");
+
+  }
+  .signature{
+    background-image: url("../../../assets/assets/Signature.svg");
+    width: 11rem;
+    height: 11rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 50%;
+  }
+
 
 }

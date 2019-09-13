@@ -12,8 +12,8 @@ class Home extends Component{
             <>
             <Header/>
             <ThreeColumns/>
-            <About/>
             <Organisation/>
+            <About/>
             <Contact/>
             </>
                     )

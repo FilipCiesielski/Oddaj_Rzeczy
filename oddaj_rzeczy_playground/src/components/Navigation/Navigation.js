@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import "./Navigation.scss"
 import {NavLink} from "react-router-dom"
-import "../../SCSS/settings/_colors.scss"
+import "../../scss/settings/_colors.scss"
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 

@@ -1,8 +1,7 @@
-@import "../../../SCSS/settings/colors";
+@import "../../../scss/settings/colors";
 .header {
   color: map_get($colors,"darkgrey");
   height: 700px;
-  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   margin-right: 10%;
