@@ -9,30 +9,25 @@ import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, 
 class Navigation extends Component{
 
     render() {
-        const selectedStyleLogin={
-            border: "1px solid #FAD648",
+        const selectedStyleLog = {
+            border: "0.0625rem solid #FAD648",
+            padding: "0.3rem 0.5rem"
+        };
 
-
-        }
-        const styleLogin={
-            color:"#3C3C3C",
-        }
-        const selectedStyleMenu={
-            border: "1px solid #3C3C3C",
-        }
-        const styleMenu={
-            color:"#3C3C3C",
-        }
+        const selectedStyleStart = {
+            border: "0.0625rem solid #737373",
+            padding: "0.3rem 1rem"
+        };
         return(
        <>
            <nav className={"container nav"}>
            <ul className={"login"}>
-               <li><NavLink style={styleLogin} activeStyle={selectedStyleLogin} to={"/logowanie"}>Zaloguj</NavLink></li>
-               <li><NavLink style={styleLogin} activeStyle={selectedStyleLogin} to={"/rejestracja"}>Załóż konto</NavLink></li>
+               <li><NavLink activeStyle={selectedStyleLog} to={"/logowanie"}>Zaloguj</NavLink></li>
+               <li><NavLink  activeStyle={selectedStyleLog} to={"/rejestracja"}>Załóż konto</NavLink></li>
            </ul>
            <ul className={"menu"}>
-               <li><NavLink style={styleMenu} activeStyle={selectedStyleMenu} exact to={"/"}>Start</NavLink></li>
-               <li><Link activeClass="active" className="test2" to="ThreeColumns" spy={true} smooth={true} duration={500}>O co chodzi?</Link></li>
+               <li><NavLink  activeStyle={selectedStyleStart} exact to={"/"}>Start</NavLink></li>
+               <li><Link activeClass="active" className="test2" to="FourSteps" spy={true} smooth={true} duration={500}>O co chodzi?</Link></li>
                <li><Link activeClass="active" className="test2" to="About" spy={true} smooth={true} duration={500}>O Nas</Link></li>
                <li><Link activeClass="active" className="test2" to="Organisation" spy={true} smooth={true} duration={500}>Fundacja i organizacje</Link></li>
                <li><Link activeClass="active" className="test2" to="Contact" spy={true} smooth={true} duration={500}>Kontakt</Link></li>

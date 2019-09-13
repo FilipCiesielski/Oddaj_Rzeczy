@@ -3,8 +3,9 @@ import "./Home.scss"
 import Header from "./Header/Header";
 import ThreeColumns from "./ThreeColumns/ThreeColumns";
 import About from "./About/About";
-import Organisation from "./Organisation/Organisation";
+import FourSteps from "./FourSteps/FourSteps";
 import Contact from "./Contact/Contact";
+import Organisation from "./Organisation/Organisation";
 
 class Home extends Component{
     render() {
@@ -12,8 +13,9 @@ class Home extends Component{
             <>
             <Header/>
             <ThreeColumns/>
-            <Organisation/>
+            <FourSteps/>
             <About/>
+            <Organisation/>
             <Contact/>
             </>
                     )
