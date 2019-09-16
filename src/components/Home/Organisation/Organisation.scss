@@ -1,0 +1,147 @@
+@import "../../../scss/settings/colors";
+
+.organisation {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: map_get($colors, "darkgrey");
+
+  .whoWeHelp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem;
+
+    span {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .deco {
+      background-image: url("../../../assets/assets/Decoration.svg");
+      width: 100%;
+      height: 2rem;
+      margin-top: 1rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: flex;
+
+    }
+
+    .whoWeHelpText {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40%;
+      font-size: 1.2rem;
+      color: map_get($colors, "darkgrey");
+
+
+    }
+  }
+
+  .whoWeHelpButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      height: 5rem;
+      align-items: center;
+      width: 12rem;
+      color: map_get($colors, "darkgrey");
+      background-color: white;
+      font-size: 1.3rem;
+      font-family: 'Open Sans', sans-serif;
+      margin: 2rem;
+      margin-bottom: 4rem;
+      outline: none;
+    }
+
+    .buttonBorder {
+      border: 0.0625rem solid map_get($colors, "grey");
+    }
+
+
+  }
+
+  .selectText {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    font-size: 1.2rem;
+    text-align: center;
+    color: map_get($colors, "darkgrey");
+
+  }
+
+  .foot {
+    margin-top: 2rem;
+    height: 50%;
+    width: 80%;
+    .foundationInfo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 2.5rem 0;
+      position: relative;
+      &:nth-of-type(2):before {
+        content: "";
+        width: 100%;
+        border-top: 0.0625rem solid map_get($colors, "grey");
+        position: absolute;
+        bottom: 3.8rem;
+      }
+      &:nth-of-type(2):after {
+        content: "";
+        width: 100%;
+        border-top: 0.0625rem solid map_get($colors, "grey");
+        position: absolute;
+        top: 3.8rem;
+      }
+      li {
+        list-style-type: none;
+        h3 {
+          font-weight: 300;
+        }
+        p {
+          font-size: 0.8rem;
+        }
+      }
+      span {
+        font-weight: 300;
+        font-size: 0.9rem;
+        color: map_get($colors, "grey");
+      }
+    }
+    hr {
+      width: 100%;
+      border-top: 0.0625rem solid map_get($colors, "darkgrey");
+      margin: 1.5rem 0;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      button {
+        margin: 0 0.5rem;
+        padding: 0.7rem 0.65rem;
+        user-select: none;
+        cursor: pointer;
+        outline: none;
+        background-color: white;
+      }
+    }
+    .borderButton {
+      border: 0.0625rem solid map_get($colors, "grey");
+    }
+  }
+}
