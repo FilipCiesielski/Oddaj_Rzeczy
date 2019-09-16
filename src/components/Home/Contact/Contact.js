@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import "./Contact.scss"
+import ContactFooter from "./ContactFooter";
 
 class Contact extends Component{
    render() {
@@ -30,7 +31,7 @@ class Contact extends Component{
 
                         </form>
                 </div>
-
+                <ContactFooter/>
            </section>
        )
    }
