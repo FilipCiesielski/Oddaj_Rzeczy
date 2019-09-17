@@ -1,17 +1,18 @@
 @import "../../../scss/settings/colors";
+
 .header {
-  color: map_get($colors,"darkgrey");
+  color: map_get($colors, "darkgrey");
   height: 700px;
   display: flex;
   justify-content: space-between;
   margin-right: 10%;
 
-  .main{
+  .main {
     display: flex;
-    align-items: center ;
+    align-items: center;
     flex-direction: column;
     width: 50%;
-       }
+  }
 
   article {
     font-size: 2rem;
@@ -21,6 +22,7 @@
 
 
   }
+
   .deco {
     background-image: url("../../../assets/assets/Decoration.svg");
     width: 100%;
@@ -31,44 +33,47 @@
     display: flex;
 
   }
-.home {
-  margin-right:5rem;
-  section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 2rem;
 
-    button{
+  .home {
+    margin-right: 5rem;
+
+    section {
       display: flex;
-      justify-content: center;
-      flex-direction:column;
-      height: 7rem;
-      border: 1px solid  map_get($colors,"grey");
-      align-items:center;
-      width: 17rem;
-      background-color: white;
-      font-size: 1.8rem;
-     font-family: 'Open Sans', sans-serif;
-      margin: 1rem;
-      outline: none;
-      a{
-        text-decoration: none;
-        color:map_get($colors,"grey");
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2rem;
+
+      button {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 7rem;
+        border: 1px solid map_get($colors, "grey");
+        align-items: center;
+        width: 17rem;
+        background-color: white;
+        font-size: 1.8rem;
+        font-family: 'Open Sans', sans-serif;
+        margin: 1rem;
+        outline: none;
+
+        a {
+          text-decoration: none;
+          color: map_get($colors, "grey");
+        }
+
       }
 
     }
+  }
 
-    }
-}
-  .background{
+  .background {
     background-image: url("../../../assets/assets/Home-Hero-Image.jpg");
     background-repeat: no-repeat;
-    background-position:right;
+    background-position: right;
     background-size: cover;
     height: 100%;
     width: 50%;
-
 
 
   }

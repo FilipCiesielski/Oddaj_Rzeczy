@@ -12,7 +12,6 @@ class Contact extends Component {
         errName: false,
         errEmail: false,
         errMessage: false,
-        visibility: "hidden"
     };
     handleOnChange = e => {
         this.setState({
@@ -36,7 +35,7 @@ class Contact extends Component {
             this.setState({formSend: true})
         } else {
             if (!nameReg.test(name)) {
-                this.setState({errName: true, visibility: "visible"})
+                this.setState({errName: true,})
             }
             if (!mailReg.test(email)) {
                 this.setState({errEmail: true})
@@ -70,7 +69,7 @@ class Contact extends Component {
     render() {
         return (
             <section name={"Contact"} className={"contact"}>
-                <div className={"contact_form"}>
+                <div className={"contactForm"}>
                     <span>Skontaktuj się z nami</span>
                     <div className={"deco"}></div>
                     {this.state.formSend &&
@@ -91,7 +90,7 @@ class Contact extends Component {
                         </div>
                         <label className={"labelText"}>Wpisz swoją wiadomość
                             <textarea rows="4" cols="30" name="message" value={this.state.message}
-                                      onChange={this.handleOnChange}
+                                      onChange={this.handleOnChange} maxLength={"4000"}
                                       placeholder="Liquorice marshmallow jelly-o gummi bears lollipop cake cupcake brownie marzipan. Dessert ice cream muffin lollipop. Donut gummies jelly beans pie wafer tiramisu."/>
                             {this.state.errMessage &&
                             <span className="errorMessage" style={{color: 'red'}}>Wiadomośc musi mieć conajmniej 120 znaków!</span>}

@@ -5,6 +5,7 @@ import './App.scss';
 import Home from "../Home/Home";
 import Registration from "../Registration/Registration";
 import Login from "../Login/Login";
+import Logout from "../Logout/Logout";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
      <Route exact path ={"/"} component={Home}/>
      <Route path={"/logowanie"} component={Login}/>
        <Route path={"/rejestracja"} component={Registration}/>
+       <Route path={"/wylogowanie"}component={Logout}/>
 
     </Switch>
  </HashRouter>
