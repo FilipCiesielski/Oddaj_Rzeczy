@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Project_Oddaj_Rzeczy_React/static/css/main.17d7e713.chunk.css",
+    "main.js": "/Project_Oddaj_Rzeczy_React/static/js/main.15fc8298.chunk.js",
+    "main.js.map": "/Project_Oddaj_Rzeczy_React/static/js/main.15fc8298.chunk.js.map",
+    "runtime~main.js": "/Project_Oddaj_Rzeczy_React/static/js/runtime~main.bedc3943.js",
+    "runtime~main.js.map": "/Project_Oddaj_Rzeczy_React/static/js/runtime~main.bedc3943.js.map",
+    "static/js/2.8d4ef1c2.chunk.js": "/Project_Oddaj_Rzeczy_React/static/js/2.8d4ef1c2.chunk.js",
+    "static/js/2.8d4ef1c2.chunk.js.map": "/Project_Oddaj_Rzeczy_React/static/js/2.8d4ef1c2.chunk.js.map",
+    "index.html": "/Project_Oddaj_Rzeczy_React/index.html",
+    "precache-manifest.7a81a81db5e48955e833865b9127ae39.js": "/Project_Oddaj_Rzeczy_React/precache-manifest.7a81a81db5e48955e833865b9127ae39.js",
+    "service-worker.js": "/Project_Oddaj_Rzeczy_React/service-worker.js",
+    "static/css/main.17d7e713.chunk.css.map": "/Project_Oddaj_Rzeczy_React/static/css/main.17d7e713.chunk.css.map",
+    "static/media/Contact.scss": "/Project_Oddaj_Rzeczy_React/static/media/Background-Contact-Form.f4db7ddd.jpg",
+    "static/media/Logout.scss": "/Project_Oddaj_Rzeczy_React/static/media/Decoration.2290784e.svg",
+    "static/media/ContactFooter.scss": "/Project_Oddaj_Rzeczy_React/static/media/Instagram.703479fd.svg",
+    "static/media/Header.scss": "/Project_Oddaj_Rzeczy_React/static/media/Home-Hero-Image.e99903ed.jpg",
+    "static/media/FourSteps.scss": "/Project_Oddaj_Rzeczy_React/static/media/Icon-4.436df0aa.svg",
+    "static/media/About.scss": "/Project_Oddaj_Rzeczy_React/static/media/Signature.e54cfcfc.svg"
+  }
+}
