@@ -4,18 +4,17 @@
   height: 3rem;
   width: 50%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin-right: 8rem;
+
 
   .copyrightText{
-    display: flex;
-    align-items: center;
-  }
+   }
   .logo{
     display: flex;
+    margin-right:30%;
+
   .facebook{
-    display: flex;
+
     background: url("../../../assets/assets/Facebook.svg") no-repeat;
     width: 2rem;
     height: 2rem;
@@ -23,12 +22,11 @@
 
   }
   .instagram {
-    display: flex;
     background: url("../../../assets/assets/Instagram.svg") no-repeat;
     width: 2rem;
     height: 2rem;
     background-size: contain;
     margin-left: 1rem;
-  }
+   }
   }
 }

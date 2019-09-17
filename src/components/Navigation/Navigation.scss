@@ -1,6 +1,7 @@
 @import "../../scss/settings/colors";
 
 nav {
+
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
@@ -11,6 +12,7 @@ nav {
     justify-content: flex-end;
     li {
       margin-left: 2rem;
+      cursor: pointer;
     }
     a{
       text-decoration: none;
@@ -27,6 +29,7 @@ nav {
 
     li {
       margin-left: 2rem;
+      cursor: pointer;
     }
     a{
       text-decoration: none;

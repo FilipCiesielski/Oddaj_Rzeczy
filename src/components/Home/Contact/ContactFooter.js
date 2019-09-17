@@ -4,7 +4,7 @@ import "./ContactFooter.scss"
 class ContactFooter extends Component{
     render() {
         return(
-            <footer className={"contactFooter container"}>
+            <footer className={"contactFooter"}>
                 <div className={"copyrightText"}>Copyright by Coders Lab</div>
                 <div className={"logo"}>
                 <div className={"facebook"}></div>
