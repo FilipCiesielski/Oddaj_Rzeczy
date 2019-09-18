@@ -6,6 +6,7 @@ import Home from "../Home/Home";
 import Registration from "../Registration/Registration";
 import Login from "../Login/Login";
 import Logout from "../Logout/Logout";
+import FourSteps from "../Home/FourSteps/FourSteps";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
      <Route exact path ={"/"} component={Home}/>
      <Route path={"/logowanie"} component={Login}/>
        <Route path={"/rejestracja"} component={Registration}/>
-       <Route path={"/wylogowanie"}component={Logout}/>
+       <Route path={"/wylogowano"} component={Logout}/>
+       <Route path={"/FourSteps"} component={FourSteps}/>
 
     </Switch>
  </HashRouter>

@@ -11,26 +11,9 @@ class Registration extends Component {
         formSend: false,
         errEmail: false,
         errPsw: false,
-        btn: "buttonBorder",
-        btn1: "buttonStyle",
-        btn2: "buttonStyle",
-
 
     };
-    handleOver = () => {
-        this.setState({btn1: "buttonBorder"})
 
-    }
-    handleLeave = () => {
-        this.setState({btn1: "buttonStyle"})
-    }
-    handleOver1 = () => {
-        this.setState({btn2: "buttonBorder"})
-
-    }
-    handleLeave1 = () => {
-        this.setState({btn2: "buttonStyle"})
-    }
     handleOnChange = e => {
         this.setState({
             [e.target.name]: e.target.value
@@ -98,11 +81,9 @@ class Registration extends Component {
 
                             </div>
                             <div className={"buttons"}>
-                                <button type='submit' className={this.state.btn1} onMouseOver={this.handleOver}
-                                        onMouseLeave={this.handleLeave}><NavLink to={"/logowanie"}>Zaloguj</NavLink>
+                                <button type='submit' className={"buttonStyle"} ><NavLink to={"/logowanie"}>Zaloguj</NavLink>
                                 </button>
-                                <input type='submit' value='Załóż konto' className={this.state.btn2}
-                                       onMouseOver={this.handleOver1} onMouseLeave={this.handleLeave1}/>
+                                <input type='submit' value='Załóż konto' className={"buttonStyle"}/>
 
                             </div>
 

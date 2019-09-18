@@ -88,8 +88,11 @@
         justify-content: space-between;
 
         .buttonStyle {
+          &:hover {
+            border: 0.0625rem solid map_get($colors, "grey");
+          }
+
           margin-top: 2rem;
-          //border: 0.0625rem solid map_get($colors, "grey");
           width: 6.5rem;
           height: 2.5rem;
           background: none;
@@ -100,29 +103,11 @@
 
           a {
             text-decoration: none;
-            color: map_get($colors, "darkgrey");;
+            color: map_get($colors, "darkgrey");
           }
 
         }
 
-        .buttonBorder {
-          margin-top: 2rem;
-          border: 0.0625rem solid map_get($colors, "grey");
-          width: 6.5rem;
-          height: 2.5rem;
-          background: none;
-          color: map_get($colors, "darkgrey");
-          font-size: 0.9rem;
-          outline: none;
-          text-decoration: none;
-          cursor: pointer;
-
-          a {
-            text-decoration: none;
-            color: map_get($colors, "darkgrey");;
-          }
-        ;
-        }
       }
     }
   }

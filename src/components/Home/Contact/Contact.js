@@ -19,17 +19,16 @@ class Contact extends Component {
         })
     };
     handleOnSubmit = e => {
-        this.setState({formSend: false});
-        this.setState({errName: false});
-        this.setState({errEmail: false});
-        this.setState({errMessage: false});
+        this.setState({
+            formSend: false, errName: false, errEmail: false, errMessage: false
+        });
+
 
 
         const mailReg = /^[0-9a-z_.-]+@[0-9a-z.-]+\.[a-z]{2,3}$/i;
         const nameReg = /^[a-zA-Z]{2,}$/i;
-        let name = this.state.name;
-        let email = this.state.email;
-        let message = this.state.message;
+        let {name,email,message} = this.state;
+
         e.preventDefault();
         if (nameReg.test(name) && mailReg.test(email) && message.length >= 120) {
             this.setState({formSend: true})
@@ -52,9 +51,7 @@ class Contact extends Component {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                name: name,
-                email: email,
-                message: message
+                name,email,message
             })
         })
             .then(function (data) {

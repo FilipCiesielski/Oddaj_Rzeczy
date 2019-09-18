@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import "./Login.scss"
-import Navigation from "../Navigation/Navigation";
+import NavigationUser from "../Navigation/Navigation";
 import {NavLink} from "react-router-dom";
 
 class Login extends Component {
@@ -11,26 +11,8 @@ class Login extends Component {
         formSend: false,
         errEmail: false,
         errPsw: false,
-        btn: "buttonBorder",
-        btn1: "buttonStyle",
-        btn2: "buttonStyle",
-
-
     };
-    handleOver = () => {
-        this.setState({btn1: "buttonBorder"})
 
-    }
-    handleLeave = () => {
-        this.setState({btn1: "buttonStyle"})
-    }
-    handleOver1 = () => {
-        this.setState({btn2: "buttonBorder"})
-
-    }
-    handleLeave1 = () => {
-        this.setState({btn2: "buttonStyle"})
-    }
     handleOnChange = e => {
         this.setState({
             [e.target.name]: e.target.value
@@ -63,7 +45,7 @@ class Login extends Component {
     render() {
         return (
             <>
-                <div className={"loginNav"}><Navigation/></div>
+                <div className={"loginNav"}><NavigationUser/></div>
                 <section className={"loginView"}>
                     <div className={"loginForm"}>
                         <span>Zaloguj się</span>
@@ -86,10 +68,9 @@ class Login extends Component {
 
                             </div>
                             <div className={"buttons"}>
-                                <button type='submit' className={this.state.btn1} onMouseOver={this.handleOver}
-                                        onMouseLeave={this.handleLeave}><NavLink to={"/rejestracja"}>Załóż
+                                <button type='submit' className={"buttonStyle"}><NavLink to={"/rejestracja"}>Załóż
                                     konto</NavLink></button>
-                                <input type='submit' value='Zaloguj' className={this.state.btn2}
+                                <input type='submit' value='Zaloguj' className={"buttonStyle"}
                                        onMouseOver={this.handleOver1} onMouseLeave={this.handleLeave1}/>
 
                             </div>
