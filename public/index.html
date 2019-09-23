@@ -12,8 +12,29 @@
     />
       <title>Oddaj_Rzeczy</title>
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCaYaZKzy6TXO9LJXt6oqvHMtWIz6s4HUY",
+        authDomain: "oddaj-rzeczy-4380c.firebaseapp.com",
+        databaseURL: "https://oddaj-rzeczy-4380c.firebaseio.com",
+        projectId: "oddaj-rzeczy-4380c",
+        storageBucket: "",
+        messagingSenderId: "932531589476",
+        appId: "1:932531589476:web:84440183d03de7a4f3aa71"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
   </body>
 </html>

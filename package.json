@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://FilipCiesielski.github.io/Project_Oddaj_Rzeczy_React",
   "dependencies": {
+    "firebase": "^6.6.2",
     "gh-pages": "^2.1.1",
     "node-sass": "^4.12.0",
     "react": "^16.9.0",
