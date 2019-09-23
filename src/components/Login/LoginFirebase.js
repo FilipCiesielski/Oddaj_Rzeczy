@@ -48,8 +48,10 @@ class LoginFirebase extends Component {
                 .doSignInWithEmailAndPassword(email, psw)
                 .then(authUser => {
                     console.log(authUser)
+                    localStorage.setItem("email",`${this.state.email}`)
                     this.setState({email: "", password: "",});
-                    this.props.history.push("/")
+                    this.props.history.push("/");
+
                 })
                 .catch(error => {
 

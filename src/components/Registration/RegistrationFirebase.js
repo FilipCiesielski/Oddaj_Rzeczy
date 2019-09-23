@@ -55,6 +55,7 @@ class RegistrationFirebase extends Component {
                 .doCreateUserWithEmailAndPassword(email, psw)
                 .then(authUser => {
                     console.log("zarejestrowano")
+                    localStorage.setItem("email",`${this.state.email}`)
                     this.setState({email: "", password: "", confirm: "",});
                     this.props.history.push("/")
                 })

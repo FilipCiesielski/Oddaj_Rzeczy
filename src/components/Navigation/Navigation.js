@@ -22,6 +22,7 @@ class Navigation extends Component{
        <>
            <nav className={"container nav"}>
            <ul className={"login"}>
+               <div>{localStorage.getItem("email")}</div>
                <li><NavLink activeStyle={selectedStyleLog} to={"/logowanie"}>Zaloguj</NavLink></li>
                <li><NavLink  activeStyle={selectedStyleLog} to={"/rejestracja"}>Załóż konto</NavLink></li>
            </ul>
