@@ -54,7 +54,7 @@ class Registration extends Component {
                 <div className={"regNav"}><Navigation/></div>
                 <section className={"regView"}>
                     <div className={"regForm"}>
-                        <span>Zaloguj się</span>
+                        <span>Załóż konto</span>
                         <div className={"deco"}></div>
                         <form onSubmit={this.handleOnSubmit}>
                             <div className={"inputs"}>
