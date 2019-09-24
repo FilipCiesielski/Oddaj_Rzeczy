@@ -3,6 +3,7 @@ import "./Navigation.scss"
 import {NavLink} from "react-router-dom"
 import "../../scss/settings/_colors.scss"
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import NavigationUser from "./NavigationUser";
 
 
 
@@ -21,11 +22,7 @@ class Navigation extends Component{
         return(
        <>
            <nav className={"container nav"}>
-           <ul className={"login"}>
-               <div>{localStorage.getItem("email")}</div>
-               <li><NavLink activeStyle={selectedStyleLog} to={"/logowanie"}>Zaloguj</NavLink></li>
-               <li><NavLink  activeStyle={selectedStyleLog} to={"/rejestracja"}>Załóż konto</NavLink></li>
-           </ul>
+          <NavigationUser/>
            <ul className={"menu"}>
                <li><NavLink  activeStyle={selectedStyleStart} exact to={"/"}>Start</NavLink></li>
                <li><Link activeClass="active" className="test2" to="FourSteps" spy={true} smooth={true} duration={500}>O co chodzi?</Link></li>

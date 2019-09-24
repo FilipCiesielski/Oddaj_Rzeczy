@@ -55,7 +55,7 @@ class RegistrationFirebase extends Component {
                 .doCreateUserWithEmailAndPassword(email, psw)
                 .then(authUser => {
                     console.log("zarejestrowano")
-                    localStorage.setItem("email",`${this.state.email}`)
+                    sessionStorage.setItem("email",`${this.state.email}`)
                     this.setState({email: "", password: "", confirm: "",});
                     this.props.history.push("/")
                 })
@@ -101,9 +101,8 @@ class RegistrationFirebase extends Component {
 
                             </div>
                             <div className={"buttons"}>
-                                <button type='submit' className={"buttonStyle"}><NavLink
+                                <NavLink
                                     to={"/logowanie"}>Zaloguj</NavLink>
-                                </button>
                                 <input type='submit' value='Załóż konto' className={"buttonStyle"}/>
 
                             </div>

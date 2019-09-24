@@ -9,9 +9,6 @@ import Logout from "../Logout/Logout";
 import FourSteps from "../Home/FourSteps/FourSteps";
 
 class  App extends Component{
-    componentWillUnmount() {
-        localStorage.clear();
-    }
 
     render() {
 

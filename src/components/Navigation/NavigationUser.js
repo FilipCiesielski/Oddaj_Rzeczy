@@ -8,6 +8,9 @@ import "../../scss/settings/_colors.scss"
 
 
 class NavigationUser extends Component{
+    handleOnClick=(e)=>{
+        sessionStorage.clear()
+    }
 
     render() {
         const selectedStyleLog = {
@@ -19,24 +22,35 @@ class NavigationUser extends Component{
             border: "0.0625rem solid #737373",
             padding: "0.3rem 1rem"
         };
-        return(
-            <>
-                <nav className={"nav"}>
-                    <ul className={"login"}>
-                        <li><NavLink activeStyle={selectedStyleLog} to={"/logowanie"}>Zaloguj</NavLink></li>
-                        <li><NavLink  activeStyle={selectedStyleLog} to={"/rejestracja"}>Załóż konto</NavLink></li>
-                    </ul>
-                    <ul className={"menu"}>
-                        <li><NavLink  activeStyle={selectedStyleStart} exact to={"/"}>Start</NavLink></li>
-                        <li><NavLink  activeStyle={selectedStyleStart} exact to={"/"}>O co chodzi?</NavLink></li>
-                        <li><NavLink  activeStyle={selectedStyleStart} exact to={"/About"}>O Nas</NavLink></li>
-                        <li><NavLink  activeStyle={selectedStyleStart} exact to={"/Organisation"}>Fundacja i organizacje</NavLink></li>
-                        <li><NavLink  activeStyle={selectedStyleStart} exact to={"/Contact"}>Kontakt</NavLink></li>
+        let Login= <>
+            <nav className={"nav"}>
+                <ul className={"login"}>
 
-                    </ul>
-                </nav>
-            </>
+                    <li><NavLink activeStyle={selectedStyleLog} to={"/logowanie"}>Zaloguj</NavLink></li>
+                    <li><NavLink  activeStyle={selectedStyleLog} to={"/rejestracja"}>Załóż konto</NavLink></li>
+                </ul>
+            </nav>
+        </>
+        let Logout=<>
+            <nav className={"nav"}>
+                <ul className={"login"}>
+                    <div className={"loginEmail"}>Cześć {sessionStorage.getItem("email")}</div>
+                <li><NavLink onClick={this.handleOnClick} activeStyle={selectedStyleLog} to={"/wylogowano"}>Wyloguj</NavLink></li>
+                <li><NavLink  activeStyle={selectedStyleLog} to={"/"}>Oddaj Rzeczy</NavLink></li>
+            </ul>
+            </nav>
+
+    </>
+        console.log(sessionStorage.getItem("email"))
+        if(sessionStorage.getItem("email")==null){
+        return(
+          Login
         )
+    }else{
+            return (
+               Logout
+            )
+        }
     }
 }
 

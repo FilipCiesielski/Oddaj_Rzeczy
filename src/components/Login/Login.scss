@@ -76,6 +76,7 @@
             border-bottom: 0.1rem solid map_get($colors, "grey");
             width: 100%;
             background: none;
+
           }
 
         }
@@ -87,9 +88,10 @@
         display: flex;
         justify-content: space-between;
 
-        .buttonStyle {
+        .buttonStyle, a {
           &:hover {
             border: 0.0625rem solid map_get($colors, "grey");
+            cursor: pointer;
           }
 
           margin-top: 2rem;
@@ -100,12 +102,14 @@
           font-size: 0.9rem;
           outline: none;
           text-decoration: none;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
-          a {
-            text-decoration: none;
-            color: map_get($colors, "darkgrey");
 
-          }
+
+
 
         }
 

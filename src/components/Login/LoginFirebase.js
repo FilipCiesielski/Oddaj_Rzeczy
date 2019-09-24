@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import "./Login.scss"
-import NavigationUser from "../Navigation/Navigation";
+import Navigation from "../Navigation/Navigation";
 import {NavLink} from "react-router-dom";
 
 class LoginFirebase extends Component {
@@ -48,7 +48,7 @@ class LoginFirebase extends Component {
                 .doSignInWithEmailAndPassword(email, psw)
                 .then(authUser => {
                     console.log(authUser)
-                    localStorage.setItem("email",`${this.state.email}`)
+                    sessionStorage.setItem("email",`${this.state.email}`)
                     this.setState({email: "", password: "",});
                     this.props.history.push("/");
 
@@ -74,7 +74,7 @@ class LoginFirebase extends Component {
     render() {
         return (
             <>
-                <div className={"loginNav"}><NavigationUser/></div>
+                <div className={"loginNav"}><Navigation/></div>
                 <section className={"loginView"}>
                     <div className={"loginForm"}>
                         <span>Zaloguj się</span>
@@ -98,8 +98,8 @@ class LoginFirebase extends Component {
 
                             </div>
                             <div className={"buttons"}>
-                                <button type='submit' className={"buttonStyle"}><NavLink to={"/rejestracja"}>Załóż
-                                    konto</NavLink></button>
+                                <NavLink to={"/rejestracja"}>Załóż
+                                    konto</NavLink>
                                 <input type='submit' value='Zaloguj' className={"buttonStyle"}/>
 
                             </div>
