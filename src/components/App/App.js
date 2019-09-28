@@ -7,6 +7,7 @@ import Registration from "../Registration/Registration";
 import Login from "../Login/Login";
 import Logout from "../Logout/Logout";
 import FourSteps from "../Home/FourSteps/FourSteps";
+import FormAfterLogin from "../FormAfterLogin/FormAfterLogin";
 
 class  App extends Component{
 
@@ -21,6 +22,7 @@ class  App extends Component{
                     <Route path={"/rejestracja"} component={Registration}/>
                     <Route path={"/wylogowano"} component={Logout}/>
                     <Route path={"/FourSteps"} component={FourSteps}/>
+                    <Route path={"/oddaj-rzeczy"} component={FormAfterLogin}/>
 
                 </Switch>
             </HashRouter>

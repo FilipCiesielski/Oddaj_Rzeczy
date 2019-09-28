@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import "./Logout.scss"
 import Navigation from "../Navigation/Navigation";
 import {NavLink} from "react-router-dom";
+import NavigationUser from "../Navigation/NavigationUser";
 
 
 class Logout extends Component {
@@ -10,7 +11,7 @@ class Logout extends Component {
     render() {
         return (
             <>
-                <div className={"logoutNav"}><Navigation/></div>
+                <div className={"logoutNav"}><NavigationUser/></div>
                 <section className={"logoutView"}>
                     <div className={"logout"}>
                         <span>Wylogowanie nastąpiło<br/>

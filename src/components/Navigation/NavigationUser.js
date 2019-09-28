@@ -36,7 +36,7 @@ class NavigationUser extends Component{
                 <ul className={"login"}>
                     <div className={"loginEmail"}>Cześć {sessionStorage.getItem("email")}</div>
                 <li><NavLink onClick={this.handleOnClick} activeStyle={selectedStyleLog} to={"/wylogowano"}>Wyloguj</NavLink></li>
-                <li><NavLink  activeStyle={selectedStyleLog} to={"/"}>Oddaj Rzeczy</NavLink></li>
+                <li><NavLink  activeStyle={selectedStyleLog} to={"/oddaj-rzeczy"}>Oddaj Rzeczy</NavLink></li>
             </ul>
             </nav>
 

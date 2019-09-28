@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import "./Login.scss"
 import Navigation from "../Navigation/Navigation";
 import {NavLink} from "react-router-dom";
+import NavigationUser from "../Navigation/NavigationUser";
 
 class LoginFirebase extends Component {
     state = {
@@ -50,7 +51,7 @@ class LoginFirebase extends Component {
                     console.log(authUser)
                     sessionStorage.setItem("email",`${this.state.email}`)
                     this.setState({email: "", password: "",});
-                    this.props.history.push("/");
+                    this.props.history.push("/oddaj-rzeczy");
 
                 })
                 .catch(error => {
@@ -74,7 +75,7 @@ class LoginFirebase extends Component {
     render() {
         return (
             <>
-                <div className={"loginNav"}><Navigation/></div>
+                <div className={"loginNav"}><NavigationUser/></div>
                 <section className={"loginView"}>
                     <div className={"loginForm"}>
                         <span>Zaloguj się</span>

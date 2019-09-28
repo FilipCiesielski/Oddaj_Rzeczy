@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Navigation from "../Navigation/Navigation";
 import {NavLink} from "react-router-dom";
+import NavigationUser from "../Navigation/NavigationUser";
 
 class RegistrationFirebase extends Component {
     state = {
@@ -54,10 +55,10 @@ class RegistrationFirebase extends Component {
             this.props.firebase
                 .doCreateUserWithEmailAndPassword(email, psw)
                 .then(authUser => {
-                    console.log("zarejestrowano")
+                    console.log("zarejestrowano");
                     sessionStorage.setItem("email",`${this.state.email}`)
                     this.setState({email: "", password: "", confirm: "",});
-                    this.props.history.push("/")
+                    this.props.history.push("/oddaj-rzeczy")
                 })
                 .catch(error => {
                     console.log(error)
@@ -71,7 +72,7 @@ class RegistrationFirebase extends Component {
     render() {
         return (
             <>
-                <div className={"regNav"}><Navigation/></div>
+                <div className={"regNav"}><NavigationUser/></div>
                 <section className={"regView"}>
                     <div className={"regForm"}>
                         <span>Załóż konto</span>
