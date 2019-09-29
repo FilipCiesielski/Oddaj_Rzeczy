@@ -17,6 +17,11 @@ const infoStep3 = (<>
         organizacje po ich lokalizacji bądź celu ich pomocy.</p>
 
 </>)
+const infoStep4 = (<>
+    <h2>Ważne!</h2>
+    <p>Podaj adres oraz odbiór terminu rzeczy.</p>
+
+</>)
 
 class TeddyBearForm extends Component {
 
@@ -24,6 +29,7 @@ class TeddyBearForm extends Component {
         valueFromRadio: null,
         valueFromOption: 1,
         stepNumber: 1,
+        goToStep1: true,
         goToStep2: false,
         goToStep3: false,
         goToSteep4: false,
@@ -38,11 +44,9 @@ class TeddyBearForm extends Component {
             valueFromRadio: e.target.value
         })
     };
-    handleOnSubmit = (e) => {
-        e.preventDefault()
-        if (this.state.valueFromRadio !== null) {
-            this.setState({goTosStep2: true, stepNumber: 2})
-        }
+    handleButtonNext = () => {
+        this.setState({goToStep2: true, stepNumber: 2})
+
     }
 
     render() {
@@ -50,65 +54,90 @@ class TeddyBearForm extends Component {
         console.log(valueFromRadio);
         let valueFromOption = this.state.valueFromOption;
         console.log(valueFromOption)
+        let goToStep1 = this.state.goToStep1
         let goToStep2 = this.state.goToStep2;
         console.log(goToStep2)
         let goToStep3 = this.state.goToStep3;
-        let step1 = (<>
-                <div className={"stepsForm"}>
-                    <h2>Zaznacz co chcesz oddać</h2>
-                    <div className={"form"}>
 
-                        <label className={"container1"}>
-
-                            <input type={"radio"} value={"ubrania, które nadają się do ponownego użycia"} name={"radio"}
-                                   onClick={this.handleOnClick}/>
-
-                            <span className="checkmark"></span>
-                            ubrania, które nadają się do ponownego użycia
-                        </label>
-                        <label className={"container1"}>
-
-                            <input type={"radio"} value={"ubrania do wyrzucenia"} name={"radio"}
-                                   onClick={this.handleOnClick}/>
-
-                            <span className="checkmark"></span>
-                            ubrania do wyrzucenia
-                        </label>
-                        <label className={"container1"}>
-
-                            <input type={"radio"} value={"zabawki"} name={"radio"}
-                                   onClick={this.handleOnClick}/>
-
-                            <span className="checkmark"></span>
-                            zabawki
-                        </label>
-                        <label className={"container1"}>
-
-                            <input type={"radio"} value={"książki"} name={"radio"}
-                                   onClick={this.handleOnClick}/>
-
-                            <span className="checkmark"></span>
-                            książki
-                        </label>
-                        <label className={"container1"}>
-
-                            <input type={"radio"} value={"inne"} name={"radio"} className={"radio"}
-                                   onClick={this.handleOnClick}/>
-
-                            <span className="checkmark"></span>
-                            inne
-                        </label>
-
+        let step1 = <>
+            <section className={"teddyForm"}>
+                <div className={"yellowInfo"}>
+                    <div>
+                        {infoStep1}
                     </div>
-                    <div className={"bagsButtons"}>
-                        <input type={"button"} value='Dalej'/>
-                    </div>
+
                 </div>
-            </>
-        )
-        let step2 =
-            (
-                <>
+
+                <div className={"teddyBackground"}>
+                    <span>Kro 1/4</span>
+                    <div className={"stepsForm"}>
+                        <h2>Zaznacz co chcesz oddać</h2>
+                        <div className={"form"}>
+
+                            <label className={"container1"}>
+
+                                <input type={"radio"} value={"ubrania, które nadają się do ponownego użycia"}
+                                       name={"radio"}
+                                       onClick={this.handleOnClick}/>
+
+                                <span className="checkmark"></span>
+                                ubrania, które nadają się do ponownego użycia
+                            </label>
+                            <label className={"container1"}>
+
+                                <input type={"radio"} value={"ubrania do wyrzucenia"} name={"radio"}
+                                       onClick={this.handleOnClick}/>
+
+                                <span className="checkmark"></span>
+                                ubrania do wyrzucenia
+                            </label>
+                            <label className={"container1"}>
+
+                                <input type={"radio"} value={"zabawki"} name={"radio"}
+                                       onClick={this.handleOnClick}/>
+
+                                <span className="checkmark"></span>
+                                zabawki
+                            </label>
+                            <label className={"container1"}>
+
+                                <input type={"radio"} value={"książki"} name={"radio"}
+                                       onClick={this.handleOnClick}/>
+
+                                <span className="checkmark"></span>
+                                książki
+                            </label>
+                            <label className={"container1"}>
+
+                                <input type={"radio"} value={"inne"} name={"radio"} className={"radio"}
+                                       onClick={this.handleOnClick}/>
+
+                                <span className="checkmark"></span>
+                                inne
+                            </label>
+
+                        </div>
+                        <div className={"bagsButtons"}>
+                            <input onClick={this.handleButtonNext} type={"button"} value='Dalej'/>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </>
+        let step2 = <>
+            <section className={"teddyForm"}>
+                <div className={"yellowInfo"}>
+                    <div>
+                        {infoStep2}
+                    </div>
+
+                </div>
+
+                <div className={"teddyBackground"}>
+                    <span>Kro 2/4</span>
                     <div className={"stepsForm"}>
                         <h2>Podaj liczbę 60l worków, które spakowałeś/aś rzeczy:</h2>
 
@@ -129,59 +158,14 @@ class TeddyBearForm extends Component {
                             <input type={"button"} value='Dalej'/>
                         </div>
                     </div>
-                </>
-            )
-        let step3=(<>
-            <div className={"stepsForm"}>
-                <h2>Lokalizacja:</h2>
-
-                <div className={"bags"}>
-                    <div className={"optionSelect"}>
-                        <select value={this.state.valueFromOption} onChange={this.handleOnChange}>
-                            <option value="" disabled hidden>wybierz</option>
-                            <option value="1">Poznań</option>
-                            <option value="2">Warszawa</option>
-                            <option value="3">Kraków</option>
-                            <option value="4">Wrocław</option>
-                            <option value="5">Katowice</option>
-
-                        </select>
-                        <div className={"optionBrick"}>
-
-                            <h4>Komu chcesz pomóc?</h4>
-                            <div className={"brick"}>
-                                <div className={"go"}>
-                                    <input id="lists2" type="checkbox" value={"dzieciom"} name="lists"/>
-                                    <label htmlFor="lists2">dzieciom</label>
-                                    <input id="lists1" type="checkbox" value={"samotnym matkom"} name="lists"/>
-                                    <label htmlFor="lists1">samotnym matkom</label>
-                                    <input id="lists3" type="checkbox" value={"bezdomnym"} name="list"/>
-                                    <label htmlFor="lists3">bezdomnym</label>
-                                    <input id="lists4" type="checkbox" value={"niepełnosprawnym"} name="lists"/>
-                                    <label htmlFor="lists4">niepełnosprawnym</label>
-                                    <input id="lists5" type="checkbox" value={"osobom starszym"} name="lists"/>
-                                    <label htmlFor="lists5">osobom starszym</label>
-
-                                </div>
 
 
-                            </div>
-
-
-                        </div>
-                        <h4>Wpisz nazwę konkretnej organizacji(opcjonalnie)</h4>
-                        <input type={"text"} name={"organisation"}/>
-
-                    </div>
                 </div>
-                <div className={"bagsButtons"}>
-                    <input type={"button"} value='Wstecz'/>
-                    <input type={"button"} value='Dalej'/>
-                </div>
-            </div></>)
 
-        return (
+            </section>
 
+        </>
+        let step3 = <>
             <section className={"teddyForm"}>
                 <div className={"yellowInfo"}>
                     <div>
@@ -191,7 +175,7 @@ class TeddyBearForm extends Component {
                 </div>
 
                 <div className={"teddyBackground"}>
-                    <span>Krok {this.state.stepNumber}/4</span>
+                    <span>Kro 3/4</span>
                     <div className={"stepsForm"}>
                         <h2>Lokalizacja:</h2>
 
@@ -240,13 +224,82 @@ class TeddyBearForm extends Component {
                         </div>
                     </div>
 
+                </div>
 
+            </section>
+
+        </>
+        let step4 = <>
+            <section className={"teddyForm"}>
+                <div className={"yellowInfo"}>
+                    <div>
+                        {infoStep4}
+                    </div>
+
+                </div>
+
+                <div className={"teddyBackground"}>
+                    <span>Kro 4/4</span>
+                    <div className={"stepsForm"}>
+                        <h2>Podaj adres oraz termin odbioru rzeczy przez kuriera</h2>
+                        <div className={"forms"}>
+                            <div>
+                            <h4>Adres odbioru:</h4>
+                            <form>
+                                <label>
+                                    Ulica
+                                    <input/>
+                                </label>
+                                <label>
+                                   Miasto
+                                    <input type="city"/>
+                                </label>
+                                <label>
+                                    Kod pocztowy
+                                    <input/>
+                                </label>
+                                <label>
+                                    Numer telefonu
+                                    <input/>
+                                </label>
+                            </form>
+                            </div>
+                          <div>
+                            <h4>Termin odbioru:</h4>
+                            <form>
+                                <label>
+                                   Data
+                                    <input type="date" name="date"/>
+                                </label>
+                                <label>
+                               Godzina
+                                    <input  type="time" name="usr_time"/>
+                                </label>
+                                <label>
+                                    Uwagi dla kuriera
+                                    <input />
+                                </label>
+
+                            </form>
+                          </div>
+
+
+
+                        </div>
+                        <div className={"bagsButtons"}>
+                            <input type={"button"} value='Wstecz'/>
+                            <input type={"button"} value='Dalej'/>
+                        </div>
+                    </div>
 
                 </div>
 
             </section>
 
-        )
+        </>
+
+
+        return step4
     }
 }
 
