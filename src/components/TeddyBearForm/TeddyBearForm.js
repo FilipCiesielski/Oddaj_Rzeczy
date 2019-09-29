@@ -57,34 +57,45 @@ class TeddyBearForm extends Component {
                 <div className={"stepsForm"}>
                     <h2>Zaznacz co chcesz oddać</h2>
                     <div className={"form"}>
-                        <label>
 
-                            <input type={"radio"} value={"ubrania, które nadają się do ponownego użycia"} name={"list"}
-                                   className={"radio"} onClick={this.handleOnClick}/>
+                        <label className={"container1"}>
+
+                            <input type={"radio"} value={"ubrania, które nadają się do ponownego użycia"} name={"radio"}
+                                   onClick={this.handleOnClick}/>
+
+                            <span className="checkmark"></span>
                             ubrania, które nadają się do ponownego użycia
                         </label>
-                        <label>
+                        <label className={"container1"}>
 
-                            <input type={"radio"} value={"ubrania do wyrzucenia"} name={"list"} className={"radio"}
+                            <input type={"radio"} value={"ubrania do wyrzucenia"} name={"radio"}
                                    onClick={this.handleOnClick}/>
+
+                            <span className="checkmark"></span>
                             ubrania do wyrzucenia
                         </label>
-                        <label>
+                        <label className={"container1"}>
 
-                            <input type={"radio"} value={"zabawki"} name={"list"} className={"radio"}
+                            <input type={"radio"} value={"zabawki"} name={"radio"}
                                    onClick={this.handleOnClick}/>
+
+                            <span className="checkmark"></span>
                             zabawki
                         </label>
-                        <label>
+                        <label className={"container1"}>
 
-                            <input type={"radio"} value={"książki"} name={"list"} className={"radio"}
+                            <input type={"radio"} value={"książki"} name={"radio"}
                                    onClick={this.handleOnClick}/>
+
+                            <span className="checkmark"></span>
                             książki
                         </label>
-                        <label>
+                        <label className={"container1"}>
 
-                            <input type={"radio"} value={"inne"} name={"list"} className={"radio"}
+                            <input type={"radio"} value={"inne"} name={"radio"} className={"radio"}
                                    onClick={this.handleOnClick}/>
+
+                            <span className="checkmark"></span>
                             inne
                         </label>
 
@@ -120,6 +131,54 @@ class TeddyBearForm extends Component {
                     </div>
                 </>
             )
+        let step3=(<>
+            <div className={"stepsForm"}>
+                <h2>Lokalizacja:</h2>
+
+                <div className={"bags"}>
+                    <div className={"optionSelect"}>
+                        <select value={this.state.valueFromOption} onChange={this.handleOnChange}>
+                            <option value="" disabled hidden>wybierz</option>
+                            <option value="1">Poznań</option>
+                            <option value="2">Warszawa</option>
+                            <option value="3">Kraków</option>
+                            <option value="4">Wrocław</option>
+                            <option value="5">Katowice</option>
+
+                        </select>
+                        <div className={"optionBrick"}>
+
+                            <h4>Komu chcesz pomóc?</h4>
+                            <div className={"brick"}>
+                                <div className={"go"}>
+                                    <input id="lists2" type="checkbox" value={"dzieciom"} name="lists"/>
+                                    <label htmlFor="lists2">dzieciom</label>
+                                    <input id="lists1" type="checkbox" value={"samotnym matkom"} name="lists"/>
+                                    <label htmlFor="lists1">samotnym matkom</label>
+                                    <input id="lists3" type="checkbox" value={"bezdomnym"} name="list"/>
+                                    <label htmlFor="lists3">bezdomnym</label>
+                                    <input id="lists4" type="checkbox" value={"niepełnosprawnym"} name="lists"/>
+                                    <label htmlFor="lists4">niepełnosprawnym</label>
+                                    <input id="lists5" type="checkbox" value={"osobom starszym"} name="lists"/>
+                                    <label htmlFor="lists5">osobom starszym</label>
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                        <h4>Wpisz nazwę konkretnej organizacji(opcjonalnie)</h4>
+                        <input type={"text"} name={"organisation"}/>
+
+                    </div>
+                </div>
+                <div className={"bagsButtons"}>
+                    <input type={"button"} value='Wstecz'/>
+                    <input type={"button"} value='Dalej'/>
+                </div>
+            </div></>)
 
         return (
 
@@ -151,13 +210,24 @@ class TeddyBearForm extends Component {
 
                                     <h4>Komu chcesz pomóc?</h4>
                                     <div className={"brick"}>
+                                        <div className={"go"}>
+                                            <input id="lists2" type="checkbox" value={"dzieciom"} name="lists"/>
+                                            <label htmlFor="lists2">dzieciom</label>
+                                            <input id="lists1" type="checkbox" value={"samotnym matkom"} name="lists"/>
+                                            <label htmlFor="lists1">samotnym matkom</label>
+                                            <input id="lists3" type="checkbox" value={"bezdomnym"} name="list"/>
+                                            <label htmlFor="lists3">bezdomnym</label>
+                                            <input id="lists4" type="checkbox" value={"niepełnosprawnym"} name="lists"/>
+                                            <label htmlFor="lists4">niepełnosprawnym</label>
+                                            <input id="lists5" type="checkbox" value={"osobom starszym"} name="lists"/>
+                                            <label htmlFor="lists5">osobom starszym</label>
 
-                                    <p  value={"dzieciom"} className={"brickSpan"}>dzieciom</p>
-                                    <p className={"brickSpan"}>samotnym matkom</p>
-                                    <p className={"brickSpan"}>bezdomnym</p>
-                                    <p className={"brickSpan"}>niepełnosprawnym</p>
-                                    <p className={"brickSpan"}>osobom starszym</p>
-                                </div>
+                                        </div>
+
+
+                                    </div>
+
+
                                 </div>
                                 <h4>Wpisz nazwę konkretnej organizacji(opcjonalnie)</h4>
                                 <input type={"text"} name={"organisation"}/>
@@ -169,6 +239,7 @@ class TeddyBearForm extends Component {
                             <input type={"button"} value='Dalej'/>
                         </div>
                     </div>
+
 
 
                 </div>

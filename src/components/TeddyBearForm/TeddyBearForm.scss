@@ -99,19 +99,44 @@
             margin-top: 1rem;
             flex-wrap: wrap;
             width: 30rem;
-
-            .brickSpan {
-              border: 1px solid map_get($colors, "darkgrey");
-              padding: 0.7rem;
-              font-size: 1rem;
-              margin-bottom: 0.5rem;
-              &:hover{
-                background-color:map_get($colors, "yellow") ;
+            input[type="checkbox"]{
+              display: none;
+            }
+            .go{
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              text-align: center;
+              margin-top: 1rem;
+              flex-wrap: wrap;
+              width: 30rem;
+              label {
+                cursor: pointer;
+                -webkit-font-smoothing: antialiased;
+                text-align:center;
+                border: 1px solid map_get($colors, "darkgrey");
+                padding: 0.5rem;
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+                margin-right: 1.3rem;
               }
 
+              input[type=checkbox] {
+                display: none;
+              }
 
+              input:checked + label {
+                border: 1px solid map_get($colors, "darkgrey");
+              color:map_get($colors, "darkgrey");
+                background-color:map_get($colors, "yellow");
+              }
+
+              input.checkbox:checked + label:before {
+                content: "";
+              }
             }
-          }
+
+                    }
 
 
         }
@@ -150,25 +175,65 @@
         flex-direction: column;
         font-size: 1.2rem;
         height: 40rem;
-
-
-        input[type=radio] {
-          margin-top: 2.5rem;
-          margin-right: 1rem;
+        margin-top: 4rem;
+        input[type="radio"]{
+         display: none;
+        }
+        .container1 {
+          display: flex;
+          position: relative;
+          padding-left: 35px;
+          margin-bottom: 12px;
+          cursor: pointer;
+          font-size: 22px;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
         }
 
 
-        //input[type=button] {
-        //     margin-top: 10rem;
-        //     border: 0.0625rem solid map_get($colors, "grey");
-        //     width: 6.5rem;
-        //     height: 2.5rem;
-        //     background: none;
-        //     color: map_get($colors, "darkgrey");
-        //     font-size: 0.9rem;
-        //     outline: none;
-        //     text-decoration: none;
-        //   }
+        .container input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+        }
+
+
+        .checkmark {
+          position: absolute;
+          top:-1.8rem;
+          left: -2rem;
+          height: 1.5625rem;
+          width: 1.5625rem;
+          background: none;
+          border: 1px solid map_get($colors, "darkgrey");
+        }
+
+
+        .container1:hover input ~ .checkmark {
+          background-color: map_get($colors, "yellow");
+        }
+
+
+        .container1 input:checked ~ .checkmark {
+          background-color: map_get($colors, "yellow");
+        }
+
+
+        .checkmark:after {
+          content: "";
+          position: absolute;
+          display: none;
+        }
+
+
+        .container1 input:checked ~ .checkmark:after {
+          display: block;
+        }
+
 
       }
     }
