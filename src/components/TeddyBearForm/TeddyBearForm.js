@@ -27,36 +27,46 @@ class TeddyBearForm extends Component {
 
     state = {
         valueFromRadio: null,
-        valueFromOption: 1,
+        valueFromOption: "",
         stepNumber: 1,
         goToStep1: true,
         goToStep2: false,
         goToStep3: false,
         goToSteep4: false,
+        counter:0,
 
     };
     handleOnChange = e => {
         this.setState({valueFromOption: e.target.value})
+
     }
-    handleOnClick = e => {
+    handleOnChangeRadio = e => {
 
         this.setState({
-            valueFromRadio: e.target.value
-        })
-    };
+            valueFromRadio: e.target.value, counter:1})
+    }
     handleButtonNext = () => {
-        this.setState({goToStep2: true, stepNumber: 2})
+        this.setState({counter:this.state.counter+1})
+        console.log(this.state.counter)
 
+    }
+    handleButtonPrev=()=>{
+        this.setState({counter:this.state.counter-1,valueFromOption:""})
+        if(this.state.counter==2){this.setState({valueFromRadio:null,})}
     }
 
     render() {
+        let counter=this.state.counter;
         let valueFromRadio = this.state.valueFromRadio;
         console.log(valueFromRadio);
         let valueFromOption = this.state.valueFromOption;
-        console.log(valueFromOption)
-        let goToStep1 = this.state.goToStep1
+        console.log(valueFromOption);
+        let stepNumber=this.state.stepNumber
+
+
+
+        let goToStep1 = this.state.goToStep1;
         let goToStep2 = this.state.goToStep2;
-        console.log(goToStep2)
         let goToStep3 = this.state.goToStep3;
 
         let step1 = <>
@@ -78,7 +88,7 @@ class TeddyBearForm extends Component {
 
                                 <input type={"radio"} value={"ubrania, które nadają się do ponownego użycia"}
                                        name={"radio"}
-                                       onClick={this.handleOnClick}/>
+                                       onClick={this.handleOnChangeRadio}/>
 
                                 <span className="checkmark"></span>
                                 ubrania, które nadają się do ponownego użycia
@@ -86,7 +96,7 @@ class TeddyBearForm extends Component {
                             <label className={"container1"}>
 
                                 <input type={"radio"} value={"ubrania do wyrzucenia"} name={"radio"}
-                                       onClick={this.handleOnClick}/>
+                                       onClick={this.handleOnChangeRadio}/>
 
                                 <span className="checkmark"></span>
                                 ubrania do wyrzucenia
@@ -94,7 +104,7 @@ class TeddyBearForm extends Component {
                             <label className={"container1"}>
 
                                 <input type={"radio"} value={"zabawki"} name={"radio"}
-                                       onClick={this.handleOnClick}/>
+                                       onClick={this.handleOnChangeRadio}/>
 
                                 <span className="checkmark"></span>
                                 zabawki
@@ -102,7 +112,7 @@ class TeddyBearForm extends Component {
                             <label className={"container1"}>
 
                                 <input type={"radio"} value={"książki"} name={"radio"}
-                                       onClick={this.handleOnClick}/>
+                                       onClick={this.handleOnChangeRadio}/>
 
                                 <span className="checkmark"></span>
                                 książki
@@ -110,7 +120,7 @@ class TeddyBearForm extends Component {
                             <label className={"container1"}>
 
                                 <input type={"radio"} value={"inne"} name={"radio"} className={"radio"}
-                                       onClick={this.handleOnClick}/>
+                                       onClick={this.handleOnChangeRadio}/>
 
                                 <span className="checkmark"></span>
                                 inne
@@ -126,7 +136,7 @@ class TeddyBearForm extends Component {
 
             </section>
 
-        </>
+        </>;
         let step2 = <>
             <section className={"teddyForm"}>
                 <div className={"yellowInfo"}>
@@ -143,8 +153,8 @@ class TeddyBearForm extends Component {
 
                         <div className={"bags"}>
                             <p>Liczba 60L worków:</p>
-                            <select value={this.state.valueFromOption} onChange={this.handleOnChange}>
-                                <option value="" disabled hidden>wybierz</option>
+                            <select value={this.state.valueFromOption} onChange={this.handleOnChange} >
+                                <option value="" disabled hidden>-wybierz-</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -154,8 +164,8 @@ class TeddyBearForm extends Component {
                             </select>
                         </div>
                         <div className={"bagsButtons"}>
-                            <input type={"button"} value='Wstecz'/>
-                            <input type={"button"} value='Dalej'/>
+                            <input onClick={this.handleButtonPrev} type={"button"} value='Wstecz'/>
+                            <input onClick={this.handleButtonNext} type={"button"} value='Dalej'/>
                         </div>
                     </div>
 
@@ -164,7 +174,7 @@ class TeddyBearForm extends Component {
 
             </section>
 
-        </>
+        </>;
         let step3 = <>
             <section className={"teddyForm"}>
                 <div className={"yellowInfo"}>
@@ -182,7 +192,7 @@ class TeddyBearForm extends Component {
                         <div className={"bags"}>
                             <div className={"optionSelect"}>
                                 <select value={this.state.valueFromOption} onChange={this.handleOnChange}>
-                                    <option value="" disabled hidden>wybierz</option>
+                                    <option value="0" disabled hidden>wybierz</option>
                                     <option value="1">Poznań</option>
                                     <option value="2">Warszawa</option>
                                     <option value="3">Kraków</option>
@@ -219,8 +229,8 @@ class TeddyBearForm extends Component {
                             </div>
                         </div>
                         <div className={"bagsButtons"}>
-                            <input type={"button"} value='Wstecz'/>
-                            <input type={"button"} value='Dalej'/>
+                            <input onClick={this.handleButtonPrev} type={"button"} value='Wstecz'/>
+                            <input onClick={this.handleButtonNext} type={"button"} value='Dalej'/>
                         </div>
                     </div>
 
@@ -228,7 +238,7 @@ class TeddyBearForm extends Component {
 
             </section>
 
-        </>
+        </>;
         let step4 = <>
             <section className={"teddyForm"}>
                 <div className={"yellowInfo"}>
@@ -277,7 +287,7 @@ class TeddyBearForm extends Component {
                                 </label>
                                 <label>
                                     Uwagi dla kuriera
-                                    <input />
+                                    <input type={"text"}/>
                                 </label>
 
                             </form>
@@ -287,7 +297,7 @@ class TeddyBearForm extends Component {
 
                         </div>
                         <div className={"bagsButtons"}>
-                            <input type={"button"} value='Wstecz'/>
+                            <input onClick={this.handleButtonPrev} type={"button"} value='Wstecz'/>
                             <input type={"button"} value='Dalej'/>
                         </div>
                     </div>
@@ -296,10 +306,19 @@ class TeddyBearForm extends Component {
 
             </section>
 
-        </>
+        </>;
 
-
-        return step4
+if(counter==2 && valueFromRadio!==null  ) {
+    return step2
+}else if(counter==3 && valueFromRadio!==null) {
+    return step3
+}else if (counter==4 && valueFromRadio!==null){
+    return step4
+}
+       else{
+//         {
+    return step1
+        }
     }
 }
 
