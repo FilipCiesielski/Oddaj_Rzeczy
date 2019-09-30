@@ -80,29 +80,34 @@
         justify-content: space-between;
         margin-top: 4rem;
         margin-bottom: 1rem;
-        h4{
+
+        h4 {
           margin-bottom: 1rem;
         }
-        div{
+
+        div {
           height: 5rem;
           width: 50%;
           display: flex;
           justify-content: flex-start;
           flex-direction: column;
           padding-right: 3rem;
-          label{
+
+          label {
             display: flex;
             justify-content: space-between;
             margin-bottom: 1rem;
 
           }
-          input{
-            border: 1px solid  map_get($colors, "darkgrey");
+
+          input {
+            border: 1px solid map_get($colors, "darkgrey");
             width: 45%;
             background: none;
           }
-          input[type=text]{
-            border: 1px solid  map_get($colors, "darkgrey");
+
+          input[type=text] {
+            border: 1px solid map_get($colors, "darkgrey");
             width: 45%;
             height: 3.9rem;
 
@@ -194,14 +199,16 @@
 
 
         select {
+          text-align: center;
+          background-color: #EDECEA;
           width: 12rem;
           height: 2rem;
           font-size: 1rem;
+          border: 1px solid map-get($colors, "darkgrey");;
 
           option {
-            font-size: 1rem;
-            background-color: transparent;
-            text-align: center;
+            background-color: #EDECEA;
+
 
           }
 

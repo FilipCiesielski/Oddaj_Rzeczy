@@ -28,40 +28,69 @@ class TeddyBearForm extends Component {
     state = {
         valueFromRadio: null,
         valueFromOption: "",
-        stepNumber: 1,
+        valueFromOptionCity:"",
+        valueFromCheckbox:[],
+    button:true,
         goToStep1: true,
         goToStep2: false,
         goToStep3: false,
         goToSteep4: false,
         counter:0,
 
+
+
+
     };
     handleOnChange = e => {
-        this.setState({valueFromOption: e.target.value})
+
+            this.setState({valueFromOption: e.target.value, valueFromOptionCity: e.target.value})
+
 
     }
+    handleOnChange1=(e)=>{
+        if(e.target.checked==true && this.state.valueFromCheckbox.indexOf(e.target.value)==-1) {
+            let arrayValue=this.state.valueFromCheckbox;
+            arrayValue.push(e.target.value)
+
+            this.setState({valueFromCheckbox: arrayValue})
+                    }else if(e.target.checked === false && this.state.valueFromCheckbox.indexOf(e.target.value)>-1){
+            let arrayValue=this.state.valueFromCheckbox;
+            arrayValue.splice(arrayValue.indexOf(e.target.value), 1);
+            this.setState({valueFromCheckbox:arrayValue});
+            console.log(this.state.valueFromCheckbox.toString())
+        }
+        if(this.state.valueFromCheckbox.length>0){
+            this.setState({button:false})
+        }else{this.setState({button:true})}
+
+        }
+
+
     handleOnChangeRadio = e => {
 
         this.setState({
             valueFromRadio: e.target.value, counter:1})
     }
     handleButtonNext = () => {
+        // if(this.state.counter==2 && this.state.valueFromCheckbox.length==0)
         this.setState({counter:this.state.counter+1})
         console.log(this.state.counter)
 
+
     }
     handleButtonPrev=()=>{
-        this.setState({counter:this.state.counter-1,valueFromOption:""})
+        this.setState({counter:this.state.counter-1})
         if(this.state.counter==2){this.setState({valueFromRadio:null,})}
     }
 
     render() {
-        let counter=this.state.counter;
-        let valueFromRadio = this.state.valueFromRadio;
+               let valueFromRadio = this.state.valueFromRadio;
         console.log(valueFromRadio);
         let valueFromOption = this.state.valueFromOption;
         console.log(valueFromOption);
-        let stepNumber=this.state.stepNumber
+        let valueFromOptionCity=this.state.valueFromOptionCity;
+
+
 
 
 
@@ -191,13 +220,13 @@ class TeddyBearForm extends Component {
 
                         <div className={"bags"}>
                             <div className={"optionSelect"}>
-                                <select value={this.state.valueFromOption} onChange={this.handleOnChange}>
-                                    <option value="0" disabled hidden>wybierz</option>
-                                    <option value="1">Poznań</option>
-                                    <option value="2">Warszawa</option>
-                                    <option value="3">Kraków</option>
-                                    <option value="4">Wrocław</option>
-                                    <option value="5">Katowice</option>
+                                <select value={this.state.valueFromOptionCity} onChange={this.handleOnChange}>
+                                    <option value="" disabled hidden>wybierz</option>
+                                    <option value="Poznań">Poznań</option>
+                                    <option value="Warszawa">Warszawa</option>
+                                    <option value="Kraków">Kraków</option>
+                                    <option value="Wrocław">Wrocław</option>
+                                    <option value="Katowice">Katowice</option>
 
                                 </select>
                                 <div className={"optionBrick"}>
@@ -205,15 +234,15 @@ class TeddyBearForm extends Component {
                                     <h4>Komu chcesz pomóc?</h4>
                                     <div className={"brick"}>
                                         <div className={"go"}>
-                                            <input id="lists2" type="checkbox" value={"dzieciom"} name="lists"/>
-                                            <label htmlFor="lists2">dzieciom</label>
-                                            <input id="lists1" type="checkbox" value={"samotnym matkom"} name="lists"/>
-                                            <label htmlFor="lists1">samotnym matkom</label>
-                                            <input id="lists3" type="checkbox" value={"bezdomnym"} name="list"/>
+                                            <input onChange={this.handleOnChange1}   id="lists1" type="checkbox" value={"dzieciom"} name="lists"/>
+                                            <label htmlFor="lists1">dzieciom</label>
+                                            <input onChange={this.handleOnChange1} defaultChecked={this.state.checked2} id="lists2" type="checkbox" value={"samotnym matkom"} name="lists"/>
+                                            <label htmlFor="lists2">samotnym matkom</label>
+                                            <input onChange={this.handleOnChange1} id="lists3" type="checkbox" value={"bezdomnym"} name="list"/>
                                             <label htmlFor="lists3">bezdomnym</label>
-                                            <input id="lists4" type="checkbox" value={"niepełnosprawnym"} name="lists"/>
+                                            <input onChange={this.handleOnChange1} id="lists4" type="checkbox" value={"niepełnosprawnym"} name="lists"/>
                                             <label htmlFor="lists4">niepełnosprawnym</label>
-                                            <input id="lists5" type="checkbox" value={"osobom starszym"} name="lists"/>
+                                            <input onChange={this.handleOnChange1} id="lists5" type="checkbox" value={"osobom starszym"} name="lists"/>
                                             <label htmlFor="lists5">osobom starszym</label>
 
                                         </div>
@@ -229,8 +258,8 @@ class TeddyBearForm extends Component {
                             </div>
                         </div>
                         <div className={"bagsButtons"}>
-                            <input onClick={this.handleButtonPrev} type={"button"} value='Wstecz'/>
-                            <input onClick={this.handleButtonNext} type={"button"} value='Dalej'/>
+                            <input onClick={this.handleButtonPrev}  type={"button"} value='Wstecz'/>
+                            <input onClick={this.handleButtonNext} disabled={this.state.button} type={"button"} value='Dalej'/>
                         </div>
                     </div>
 
@@ -308,18 +337,18 @@ class TeddyBearForm extends Component {
 
         </>;
 
-if(counter==2 && valueFromRadio!==null  ) {
+if(this.state.counter==2 && valueFromRadio!==null  ) {
     return step2
-}else if(counter==3 && valueFromRadio!==null) {
+}else if(this.state.counter==3 && valueFromRadio!==null ) {
     return step3
-}else if (counter==4 && valueFromRadio!==null){
+}else if (this.state.counter==4 && valueFromRadio!==null ){
     return step4
 }
-       else{
+
 //         {
     return step1
         }
-    }
+
 }
 
 
