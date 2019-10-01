@@ -12,7 +12,8 @@ class RegistrationFirebase extends Component {
         formSend: false,
         errEmail: false,
         errPsw: false,
-        errConfirmPsw: false
+        errConfirmPsw: false,
+        errPsw2:false,
 
 
     };
@@ -31,6 +32,7 @@ class RegistrationFirebase extends Component {
         let formSend = false;
         let errPsw = false;
         let errEmail = false;
+        let errPsw2=false;
 
 
         e.preventDefault();
@@ -61,14 +63,20 @@ class RegistrationFirebase extends Component {
                     this.props.history.push("/oddaj-rzeczy")
                 })
                 .catch(error => {
-                    console.log(error)
-                    this.setState({error});
+
+                    console.log(error.code)
+                    if(error.code=="auth/email-already-in-use"){
+                        errPsw2=true;
+
+
+
+                    }
+                    this.setState({errPsw2:errPsw2});
                 });
         }
 
 
-    };
-
+    }
     render() {
         return (
             <>
@@ -96,6 +104,7 @@ class RegistrationFirebase extends Component {
                                            onChange={this.handleOnChange}/>
                                     {this.state.errConfirmPsw &&
                                     <span className="errorMessage" style={{color: 'red'}}>Podane hasło jest nieprawidłowe!</span>}
+                                    {this.state.errPsw2 && <span className="errorMessage" style={{color: 'red'}}>Podany email jest już zarejestrowany!</span>}
 
                                 </label>
 

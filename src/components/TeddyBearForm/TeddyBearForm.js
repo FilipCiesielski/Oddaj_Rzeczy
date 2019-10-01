@@ -30,12 +30,28 @@ class TeddyBearForm extends Component {
         valueFromOption: "",
         valueFromOptionCity:"",
         valueFromCheckbox:[],
-    button:true,
+        valueFromNameOrganisation:"",
+        button:true,
         goToStep1: true,
         goToStep2: false,
         goToStep3: false,
         goToSteep4: false,
         counter:0,
+
+        street:"",
+        city:"",
+        postcode:"",
+        phone:"",
+        date:"",
+        time:'',
+        message:"",
+        errStreet:false,
+        errCity:false,
+        errPostcode:false,
+        errPhone:false,
+        errDate:false,
+        errTime:false,
+        errMessage:false,
 
 
 
@@ -43,8 +59,9 @@ class TeddyBearForm extends Component {
     };
     handleOnChange = e => {
 
-            this.setState({valueFromOption: e.target.value, valueFromOptionCity: e.target.value})
-
+            this.setState({    [e.target.name]: e.target.value, valueFromOption: e.target.value,
+                valueFromOptionCity: e.target.value,valueFromNameOrganisation:e.target.value,})
+console.log(this.state.message)
 
     }
     handleOnChange1=(e)=>{
@@ -57,7 +74,7 @@ class TeddyBearForm extends Component {
             let arrayValue=this.state.valueFromCheckbox;
             arrayValue.splice(arrayValue.indexOf(e.target.value), 1);
             this.setState({valueFromCheckbox:arrayValue});
-            console.log(this.state.valueFromCheckbox.toString())
+
         }
         if(this.state.valueFromCheckbox.length>0){
             this.setState({button:false})
@@ -81,6 +98,41 @@ class TeddyBearForm extends Component {
     handleButtonPrev=()=>{
         this.setState({counter:this.state.counter-1})
         if(this.state.counter==2){this.setState({valueFromRadio:null,})}
+    }
+    handleOnSubmit=e=>{
+        e.preventDefault()
+        const streetReg =/^[a-zA-Z]{2,}$/i;
+        const cityReg=/^[a-zA-Z]{2,}$/i;
+        const postcodeReg = /[0-9]{2}-[0-9]{3}/g;
+        const phoneReg = /^\+48\d{9}$/;
+        const timeReg=/^(0[0-9]|1[0-9]|2[0-3]|[0-9]):[0-5][0-9]$/;
+
+
+        this.setState({
+            formSend: false, errName: false, errEmail: false, errMessage: false
+        });
+
+
+
+        let {street,city,postcode,phone,date,time,message} = this.state;
+        console.log(date)
+
+        e.preventDefault();
+        // if (streetReg.test(street) && cityReg.test(city) && postcodeReg.test(postcode) && phoneReg.test(phone) ) {
+        //     this.setState({formSend: true})
+        // } else {
+        //     if (!nameReg.test(name)) {
+        //         this.setState({errName: true,})
+        //     }
+        //     if (!mailReg.test(email)) {
+        //         this.setState({errEmail: true})
+        //     }
+        //     if (message.length < 120) {
+        //         this.setState({errMessage: true})
+        //     }
+        // }
+
+
     }
 
     render() {
@@ -111,6 +163,7 @@ class TeddyBearForm extends Component {
                     <span>Kro 1/4</span>
                     <div className={"stepsForm"}>
                         <h2>Zaznacz co chcesz oddać</h2>
+
                         <div className={"form"}>
 
                             <label className={"container1"}>
@@ -236,7 +289,7 @@ class TeddyBearForm extends Component {
                                         <div className={"go"}>
                                             <input onChange={this.handleOnChange1}   id="lists1" type="checkbox" value={"dzieciom"} name="lists"/>
                                             <label htmlFor="lists1">dzieciom</label>
-                                            <input onChange={this.handleOnChange1} defaultChecked={this.state.checked2} id="lists2" type="checkbox" value={"samotnym matkom"} name="lists"/>
+                                            <input onChange={this.handleOnChange1}  id="lists2" type="checkbox" value={"samotnym matkom"} name="lists"/>
                                             <label htmlFor="lists2">samotnym matkom</label>
                                             <input onChange={this.handleOnChange1} id="lists3" type="checkbox" value={"bezdomnym"} name="list"/>
                                             <label htmlFor="lists3">bezdomnym</label>
@@ -253,7 +306,7 @@ class TeddyBearForm extends Component {
 
                                 </div>
                                 <h4>Wpisz nazwę konkretnej organizacji(opcjonalnie)</h4>
-                                <input type={"text"} name={"organisation"}/>
+                                <input onChange={this.handleOnChange}  value={this.state.valueFromNameOrganisation} type={"text"} name={"organisation"}/>
 
                             </div>
                         </div>
@@ -284,39 +337,39 @@ class TeddyBearForm extends Component {
                         <div className={"forms"}>
                             <div>
                             <h4>Adres odbioru:</h4>
-                            <form>
+                            <form onSubmit={this.handleOnSubmit}>
                                 <label>
                                     Ulica
-                                    <input/>
+                                    <input name={"street"} onChange={this.handleOnChange} value={this.state.street}/>
                                 </label>
                                 <label>
                                    Miasto
-                                    <input type="city"/>
+                                    <input name={"city"} type="city" onChange={this.handleOnChange} value={this.state.city}/>
                                 </label>
                                 <label>
-                                    Kod pocztowy
-                                    <input/>
+                                    Kod<br/> pocztowy
+                                    <input name={"postcode"} type={"postcode"} onChange={this.handleOnChange} value={this.state.postcode}/>
                                 </label>
                                 <label>
                                     Numer telefonu
-                                    <input/>
+                                    <input  name={"phone"}  type={"tel"} onChange={this.handleOnChange}  value={this.state.phone}/>
                                 </label>
                             </form>
                             </div>
                           <div>
                             <h4>Termin odbioru:</h4>
-                            <form>
+                            <form  onSubmit={this.handleOnSubmit}>
                                 <label>
                                    Data
-                                    <input type="date" name="date"/>
+                                    <input type="date" name="date" onChange={this.handleOnChange} value={this.state.date}/>
                                 </label>
                                 <label>
                                Godzina
-                                    <input  type="time" name="usr_time"/>
+                                    <input type="time" name="usr_time" onChange={this.handleOnChange} />
                                 </label>
                                 <label>
                                     Uwagi dla kuriera
-                                    <input type={"text"}/>
+                                    <textarea name={"message"}onChange={this.handleOnChange} value={this.state.message}/>
                                 </label>
 
                             </form>
@@ -327,7 +380,7 @@ class TeddyBearForm extends Component {
                         </div>
                         <div className={"bagsButtons"}>
                             <input onClick={this.handleButtonPrev} type={"button"} value='Wstecz'/>
-                            <input type={"button"} value='Dalej'/>
+                            <input type={"button"}  value='Dalej'/>
                         </div>
                     </div>
 

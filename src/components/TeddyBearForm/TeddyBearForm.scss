@@ -51,6 +51,9 @@
       flex-direction: column;
       font-size: 1.2rem;
       height: 38rem;
+      p{
+        font-size: 0.8rem;
+      }
 
       input[type=text] {
         background: none;
@@ -62,7 +65,7 @@
 
       }
 
-      input[type=button] {
+      input[type="button"] {
         margin-top: 10.4rem;
         border: 0.0625rem solid map_get($colors, "grey");
         width: 6.5rem;
@@ -87,32 +90,41 @@
 
         div {
           height: 5rem;
-          width: 50%;
+          width: 48%;
           display: flex;
           justify-content: flex-start;
           flex-direction: column;
-          padding-right: 3rem;
+          padding-right: 2rem;
 
           label {
             display: flex;
             justify-content: space-between;
             margin-bottom: 1rem;
+            align-items: center;
 
           }
 
           input {
             border: 1px solid map_get($colors, "darkgrey");
-            width: 45%;
             background: none;
+            margin-right: 1rem;
+            height: 2rem;
+
           }
 
-          input[type=text] {
+          textarea {
             border: 1px solid map_get($colors, "darkgrey");
-            width: 45%;
-            height: 3.9rem;
-
+            height: 5.5rem;
+            background: none;
+            width: 72%;
 
           }
+    input[type=date], input[type=time]{
+            width: 60%;
+           margin-right: 0;
+
+          }
+
         }
 
       }
@@ -139,6 +151,9 @@
           h4 {
             margin-top: 1rem;
           }
+          p{
+            font-size: 0.8rem;
+          }
 
           .brick {
             display: flex;
@@ -161,6 +176,7 @@
               margin-top: 1rem;
               flex-wrap: wrap;
               width: 30rem;
+              user-select: none;
 
               label {
                 cursor: pointer;
