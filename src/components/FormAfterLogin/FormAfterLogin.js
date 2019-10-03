@@ -3,6 +3,8 @@ import "./FormAfterLogin.scss"
 import Navigation from "../Navigation/Navigation";
 import {Link, NavLink} from "react-router-dom";
 import TeddyBearForm from "../TeddyBearForm/TeddyBearForm";
+import Contact from "../Home/Contact/Contact";
+import NavigationAfterLogin from "../Navigation/NavigationAfterLogin";
 
 
 class FormAfterLogin extends Component {
@@ -16,7 +18,7 @@ class FormAfterLogin extends Component {
                 <div name="oddaj-rzeczy" className={"header2"}>
 
                     <div className={"background2"}></div>
-                    <div className={"main2"}><Navigation/>
+                    <div className={"main2"}><NavigationAfterLogin/>
                         <div className={"home2"}>
                             <article>
                                 <p>Oddaj rzeczy, których już nie chcesz <br/>POTRZEBUJĄCYM</p>
@@ -37,6 +39,7 @@ class FormAfterLogin extends Component {
                     </div>
                 </div>
                 <TeddyBearForm/>
+                <Contact/>
             </>
         )
     }

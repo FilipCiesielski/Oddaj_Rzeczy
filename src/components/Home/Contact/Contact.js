@@ -24,10 +24,9 @@ class Contact extends Component {
         });
 
 
-
         const mailReg = /^[0-9a-z_.-]+@[0-9a-z.-]+\.[a-z]{2,3}$/i;
         const nameReg = /^[a-zA-Z]{2,}$/i;
-        let {name,email,message} = this.state;
+        let {name, email, message} = this.state;
 
         e.preventDefault();
         if (nameReg.test(name) && mailReg.test(email) && message.length >= 120) {
@@ -51,7 +50,7 @@ class Contact extends Component {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                name,email,message
+                name, email, message
             })
         })
             .then(function (data) {
