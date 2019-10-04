@@ -358,7 +358,7 @@ class TeddyBearForm extends Component {
                         </div>
                         <div className={"bagsButtons"}>
                             <input onClick={this.handleButtonPrev} type={"button"} value='Wstecz'/>
-                            <input type={"submit"} value='Dalej'/>
+                            <button onClick={this.handleButtonNext} type={"submit"} value='Dalej'/>
                         </div>
                     </div>
                 </div>
