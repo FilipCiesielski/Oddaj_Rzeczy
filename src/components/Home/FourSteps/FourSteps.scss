@@ -14,7 +14,7 @@
     flex-direction: column;
     justify-content: center;
     span{
-      font-size: 2rem;
+      font-size: 1.8rem;
       margin-bottom: 2rem;
     }
     .deco_organisation{
@@ -107,12 +107,12 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 7rem;
+    height: 5rem;
     border: 1px solid map_get($colors, "grey");
     align-items: center;
-    width: 17rem;
+    width: 16rem;
     background-color: white;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     font-family: 'Open Sans', sans-serif;
     margin: 2rem;
     margin-bottom: 4rem;

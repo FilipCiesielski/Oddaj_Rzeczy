@@ -2,7 +2,7 @@
 
 .contact {
   margin-top: 2rem;
-  height: 50rem;
+  height: 52rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -10,16 +10,19 @@
   position: relative;
 
   &:after {
+
     content: "";
     background: url("../../../assets/assets/Background-Contact-Form.jpg") no-repeat;
-    background-size: contain;
+    background-size: cover;
+
     opacity: 0.25;
     top: 0;
-    left: 0;
+    left:0;
     bottom: 0;
     right: 0;
     position: absolute;
     z-index: -1;
+
   }
 
   .contactForm {
