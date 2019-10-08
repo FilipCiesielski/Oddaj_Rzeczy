@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Project_Oddaj_Rzeczy_React/static/css/main.ad382bd6.chunk.css",
+    "main.css": "/Project_Oddaj_Rzeczy_React/static/css/main.fba51956.chunk.css",
     "main.js": "/Project_Oddaj_Rzeczy_React/static/js/main.73c205c9.chunk.js",
     "main.js.map": "/Project_Oddaj_Rzeczy_React/static/js/main.73c205c9.chunk.js.map",
     "runtime~main.js": "/Project_Oddaj_Rzeczy_React/static/js/runtime~main.bedc3943.js",
@@ -8,9 +8,9 @@
     "static/js/2.f3cfb96f.chunk.js": "/Project_Oddaj_Rzeczy_React/static/js/2.f3cfb96f.chunk.js",
     "static/js/2.f3cfb96f.chunk.js.map": "/Project_Oddaj_Rzeczy_React/static/js/2.f3cfb96f.chunk.js.map",
     "index.html": "/Project_Oddaj_Rzeczy_React/index.html",
-    "precache-manifest.439f8618eec4c2ea4f141dfcc6763a6d.js": "/Project_Oddaj_Rzeczy_React/precache-manifest.439f8618eec4c2ea4f141dfcc6763a6d.js",
+    "precache-manifest.10dea9d6ab0368c71d4f79c209d92885.js": "/Project_Oddaj_Rzeczy_React/precache-manifest.10dea9d6ab0368c71d4f79c209d92885.js",
     "service-worker.js": "/Project_Oddaj_Rzeczy_React/service-worker.js",
-    "static/css/main.ad382bd6.chunk.css.map": "/Project_Oddaj_Rzeczy_React/static/css/main.ad382bd6.chunk.css.map",
+    "static/css/main.fba51956.chunk.css.map": "/Project_Oddaj_Rzeczy_React/static/css/main.fba51956.chunk.css.map",
     "static/media/Contact.scss": "/Project_Oddaj_Rzeczy_React/static/media/Background-Contact-Form.f4db7ddd.jpg",
     "static/media/TeddyBearForm.scss": "/Project_Oddaj_Rzeczy_React/static/media/Icon-4.436df0aa.svg",
     "static/media/HeaderAfterLogin.scss": "/Project_Oddaj_Rzeczy_React/static/media/Form-Hero-Image.3bee335a.jpg",
