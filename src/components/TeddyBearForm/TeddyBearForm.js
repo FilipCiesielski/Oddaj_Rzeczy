@@ -5,23 +5,23 @@ import "./TeddyBearForm.scss"
 const infoStep1 = (<>
     <h2>Ważne!</h2>
     <p>Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać</p>
-</>)
+</>);
 const infoStep2 = (<>
     <h2>Ważne!</h2>
     <p>Wszystkie rzeczy do spakowania zapakuj w 60l worki. Dokładną instrukcję jak spakować worki dostaniesz <a
         href={""}>TUTAJ</a></p>
-</>)
+</>);
 const infoStep3 = (<>
     <h2>Ważne!</h2>
     <p>Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować
         organizacje po ich lokalizacji bądź celu ich pomocy.</p>
 
-</>)
+</>);
 const infoStep4 = (<>
     <h2>Ważne!</h2>
     <p>Podaj adres oraz odbiór terminu rzeczy.</p>
 
-</>)
+</>);
 
 class TeddyBearForm extends Component {
 
@@ -76,17 +76,18 @@ class TeddyBearForm extends Component {
     }
 
     handleOnChange1 = (e) => {
-        if (e.target.checked == true && this.state.valueFromCheckbox.indexOf(e.target.value) == -1) {
+        if (e.target.checked === true && this.state.valueFromCheckbox.indexOf(e.target.value) === -1) {
             let arrayValue = this.state.valueFromCheckbox;
-            arrayValue.push(" " + e.target.value);
-
-
+            arrayValue.push(e.target.value);
+            console.log(arrayValue);
             this.setState({valueFromCheckbox: arrayValue})
-        } else if (e.target.checked === false && this.state.valueFromCheckbox.indexOf(e.target.value) > -1) {
+        } else if (e.target.checked == false && this.state.valueFromCheckbox.indexOf(e.target.value) > -1) {
             let arrayValue = this.state.valueFromCheckbox;
-            arrayValue.splice(arrayValue.indexOf(e.target.value), 1);
+            console.log(arrayValue);
+            arrayValue.splice(arrayValue.indexOf(e.target.value),1);
             this.setState({valueFromCheckbox: arrayValue});
-            console.log(arrayValue)
+
+            console.log(this.state.valueFromCheckbox)
 
         }
         if (this.state.valueFromCheckbox.length > 0) {
@@ -130,22 +131,22 @@ class TeddyBearForm extends Component {
 
 
         if (street.length > 2 && cityReg.test(city) && postcodeReg.test(postcode) && phoneReg.test(phone)) {
-            this.setState({formSend: true})
+            this.setState({formSend: true, counter:this.state.counter +1})
         } else {
             if (street.length > 2) {
-                this.setState({errStreet: true,})
+                this.setState({errStreet: true,});
                 console.log(errStreet)
             }
             if (!cityReg.test(city)) {
-                this.setState({errCity: true})
+                this.setState({errCity: true});
                 console.log(errCity)
             }
             if (!postcodeReg.test(postcode)) {
-                this.setState({errPostcode: true})
+                this.setState({errPostcode: true});
                 console.log(errPostcode)
             }
             if (!phoneReg.test(phone)) {
-                this.setState({errPhone: true})
+                this.setState({errPhone: true});
                 console.log(errPhone)
             }
         }
@@ -358,7 +359,7 @@ class TeddyBearForm extends Component {
                         </div>
                         <div className={"bagsButtons"}>
                             <input onClick={this.handleButtonPrev} type={"button"} value='Wstecz'/>
-                            <button onClick={this.handleButtonNext} type={"submit"} value='Dalej'/>
+                            <input onClick={this.handleOnSubmit}  type={"button"} value='Dalej'/>
                         </div>
                     </div>
                 </div>
@@ -377,7 +378,7 @@ class TeddyBearForm extends Component {
                             </section>
                             <section>
                                 <div className={"recycling"}></div>
-                                <p>dla lokalizacji:{this.state.valueOptionCity}</p></section>
+                                <p>dla lokalizacji: {this.state.valueOptionCity}</p></section>
                         </div>
                         <div className={"forms"}>
                             <div>
