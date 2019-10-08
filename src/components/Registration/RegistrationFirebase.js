@@ -80,6 +80,7 @@ class RegistrationFirebase extends Component {
     render() {
         return (
             <>
+                <section className={"wraper"}>
                 <div className={"regNav"}><NavigationUser/></div>
                 <section className={"regView"}>
                     <div className={"regForm"}>
@@ -120,6 +121,7 @@ class RegistrationFirebase extends Component {
 
                         </form>
                     </div>
+                </section>
                 </section>
             </>
         )

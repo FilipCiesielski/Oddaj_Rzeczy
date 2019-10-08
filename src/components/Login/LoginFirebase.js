@@ -75,6 +75,7 @@ class LoginFirebase extends Component {
     render() {
         return (
             <>
+                <section className={"wraper"}>
                 <div className={"loginNav"}><NavigationUser/></div>
                 <section className={"loginView"}>
                     <div className={"loginForm"}>
@@ -108,6 +109,7 @@ class LoginFirebase extends Component {
 
                         </form>
                     </div>
+                </section>
                 </section>
             </>
         )
