@@ -6,10 +6,15 @@ import PaginationLocal from "./PaginationLocal/PaginationLocal";
 
 const spanFundation = <p className={"selectText"}>Nori grape silver beet broccoli kombu beet greans fava bean potato
     quandong celery. Nori grape silver beet broccoli kombu beet greans fava bean potato quandong celery . </p>;
+
+
 const spanOrganisation = <p className={"selectText"}>Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens
     parsnip. Nori grape silver beet broccoli kombu beet greans fava bean potato quandong celery .</p>;
+
+
 const spanLocal = <p className={"selectText"}>Bunya nuts black-eyed pea. Nori grape silver beet broccoli kombu. Nori
     grape silver beet broccoli kombu beet greans fava bean potato quandong celery . </p>;
+
 
 class Organisation extends Component {
     state = {
@@ -21,7 +26,8 @@ class Organisation extends Component {
         border2: "",
         border3: ""
 
-    }
+    };
+
     handleOnButtonFoundation = () => {
         this.setState({
             border1: "buttonBorder",
@@ -31,7 +37,8 @@ class Organisation extends Component {
             organisation: false,
             local: false
         })
-    }
+    };
+
     handleOnButtonOrganisation = () => {
         this.setState({
             border2: "buttonBorder",
@@ -41,7 +48,8 @@ class Organisation extends Component {
             organisation: true,
             local: false
         })
-    }
+    };
+
     handleOnButtonLocal = () => {
         this.setState({
             border3: "buttonBorder",
@@ -51,7 +59,8 @@ class Organisation extends Component {
             organisation: false,
             local: true
         })
-    }
+    };
+
 
     render() {
 

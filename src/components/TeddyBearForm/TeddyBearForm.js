@@ -1,20 +1,16 @@
 import React, {Component} from 'react';
 import "./TeddyBearForm.scss"
+import Step1 from "./Step1";
+import Step2 from "./Step2";
+import Step3 from "./Step3";
 
 
-const infoStep1 = (<>
-    <h2>Ważne!</h2>
-    <p>Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać</p>
-</>);
+
 const infoStep2 = (<>
-    <h2>Ważne!</h2>
-    <p>Wszystkie rzeczy do spakowania zapakuj w 60l worki. Dokładną instrukcję jak spakować worki dostaniesz <a
-        href={""}>TUTAJ</a></p>
+
 </>);
 const infoStep3 = (<>
-    <h2>Ważne!</h2>
-    <p>Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować
-        organizacje po ich lokalizacji bądź celu ich pomocy.</p>
+
 
 </>);
 const infoStep4 = (<>
@@ -31,11 +27,14 @@ class TeddyBearForm extends Component {
         valueOptionCity: "",
         valueFromCheckbox: [],
         valueFromNameOrganisation: "",
+
         button: true,
+
         goToStep1: true,
         goToStep2: false,
         goToStep3: false,
         goToSteep4: false,
+
         counter: 0,
 
         formSend: false,
@@ -79,15 +78,12 @@ class TeddyBearForm extends Component {
         if (e.target.checked === true && this.state.valueFromCheckbox.indexOf(e.target.value) === -1) {
             let arrayValue = this.state.valueFromCheckbox;
             arrayValue.push(e.target.value);
-            console.log(arrayValue);
             this.setState({valueFromCheckbox: arrayValue})
         } else if (e.target.checked == false && this.state.valueFromCheckbox.indexOf(e.target.value) > -1) {
             let arrayValue = this.state.valueFromCheckbox;
-            console.log(arrayValue);
             arrayValue.splice(arrayValue.indexOf(e.target.value),1);
             this.setState({valueFromCheckbox: arrayValue});
 
-            console.log(this.state.valueFromCheckbox)
 
         }
         if (this.state.valueFromCheckbox.length > 0) {
@@ -96,7 +92,7 @@ class TeddyBearForm extends Component {
             this.setState({button: true})
         }
 
-    }
+    };
 
 
     handleOnChangeRadio = e => {
@@ -104,20 +100,20 @@ class TeddyBearForm extends Component {
         this.setState({
             valueFromRadio: e.target.value, counter: 1
         })
-    }
+    };
+
     handleButtonNext = () => {
-        // if(this.state.counter==2 && this.state.valueFromCheckbox.length==0)
         this.setState({counter: this.state.counter + 1})
-        console.log(this.state.counter)
 
+    };
 
-    }
     handleButtonPrev = () => {
         this.setState({counter: this.state.counter - 1})
         if (this.state.counter == 2) {
             this.setState({valueFromRadio: null,})
         }
-    }
+    };
+
     handleOnSubmit = e => {
         e.preventDefault();
         const streetReg = /^[a-zA-Z]{2,}\s[0-9]+[abc]$/i;
@@ -127,7 +123,6 @@ class TeddyBearForm extends Component {
 
 
         let {street, city, postcode, phone, date, errPostcode, errStreet, errCity, errDate, errPhone} = this.state;
-        console.log(date)
 
 
         if (street.length > 2 && cityReg.test(city) && postcodeReg.test(postcode) && phoneReg.test(phone)) {
@@ -150,155 +145,28 @@ class TeddyBearForm extends Component {
                 console.log(errPhone)
             }
         }
-        console.log(this.state.formSend)
 
-    }
+    };
 
     render() {
         let valueFromRadio = this.state.valueFromRadio;
 
-
         let goToStep1 = this.state.goToStep1;
+
         let goToStep2 = this.state.goToStep2;
+
         let goToStep3 = this.state.goToStep3;
 
-        let step1 = <>
-            <section className={"teddyForm"}>
-                <div className={"yellowInfo"}>
-                    <div>
-                        {infoStep1}
-                    </div>
-                </div>
-                <div className={"teddyBackground"}>
-                    <span>Krok 1/4</span>
-                    <div className={"stepsForm"}>
-                        <h2>Zaznacz co chcesz oddać</h2>
-                        <div className={"form"}>
-                            <label className={"container1"}>
-                                <input type={"radio"} value={"ubrania, które nadają się do ponownego użycia"}
-                                       name={"radio"}
-                                       onClick={this.handleOnChangeRadio}/>
-                                <span className="checkmark"></span>
-                                ubrania, które nadają się do ponownego użycia
-                            </label>
-                            <label className={"container1"}>
-                                <input type={"radio"} value={"ubrania do wyrzucenia"} name={"radio"}
-                                       onClick={this.handleOnChangeRadio}/>
-                                <span className="checkmark"></span>
-                                ubrania do wyrzucenia
-                            </label>
-                            <label className={"container1"}>
-                                <input type={"radio"} value={"zabawki"} name={"radio"}
-                                       onClick={this.handleOnChangeRadio}/>
-                                <span className="checkmark"></span>
-                                zabawki
-                            </label>
-                            <label className={"container1"}>
-                                <input type={"radio"} value={"książki"} name={"radio"}
-                                       onClick={this.handleOnChangeRadio}/>
-                                <span className="checkmark"></span>
-                                książki
-                            </label>
-                            <label className={"container1"}>
-                                <input type={"radio"} value={"inne"} name={"radio"} className={"radio"}
-                                       onClick={this.handleOnChangeRadio}/>
-                                <span className="checkmark"></span>
-                                inne
-                            </label>
-                        </div>
-                        <div className={"bagsButtons"}>
-                            <input onClick={this.handleButtonNext} type={"button"} value='Dalej'/>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </>;
-        let step2 = <>
-            <section className={"teddyForm"}>
-                <div className={"yellowInfo"}>
-                    <div>
-                        {infoStep2}
-                    </div>
-                </div>
-                <div className={"teddyBackground"}>
-                    <span>Krok 2/4</span>
-                    <div className={"stepsForm"}>
-                        <h2>Podaj liczbę 60l worków, które spakowałeś/aś rzeczy:</h2>
 
-                        <div className={"bags"}>
-                            <p>Liczba 60L worków:</p>
-                            <select value={this.state.valueFromOption} onChange={this.handleOnChangeOption}>
-                                <option value="" disabled hidden>-wybierz-</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                        </div>
-                        <div className={"bagsButtons"}>
-                            <input onClick={this.handleButtonPrev} type={"button"} value='Wstecz'/>
-                            <input onClick={this.handleButtonNext} type={"button"} value='Dalej'/>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </>;
-        let step3 = <>
-            <section className={"teddyForm"}>
-                <div className={"yellowInfo"}>
-                    <div>
-                        {infoStep3}
-                    </div>
-                </div>
-                <div className={"teddyBackground"}>
-                    <span>Krok 3/4</span>
-                    <div className={"stepsForm"}>
-                        <h2>Lokalizacja:</h2>
-                        <div className={"bags"}>
-                            <div className={"optionSelect"}>
-                                <select value={this.state.valueOptionCity} onChange={this.handleOnChangeCity}>
-                                    <option value="" disabled hidden>-wybierz-</option>
-                                    <option value="Poznań">Poznań</option>
-                                    <option value="Warszawa">Warszawa</option>
-                                    <option value="Kraków">Kraków</option>
-                                    <option value="Wrocław">Wrocław</option>
-                                    <option value="Katowice">Katowice</option>
-                                </select>
-                                <div className={"optionBrick"}>
-                                    <h4>Komu chcesz pomóc?</h4>
-                                    <div className={"brick"}>
-                                        <div className={"go"}>
-                                            <input onChange={this.handleOnChange1} id="lists1" type="checkbox"
-                                                   value={"dzieciom"} name="lists"/>
-                                            <label htmlFor="lists1">dzieciom</label>
-                                            <input onChange={this.handleOnChange1} id="lists2" type="checkbox"
-                                                   value={"samotnym matkom"} name="lists"/>
-                                            <label htmlFor="lists2">samotnym matkom</label>
-                                            <input onChange={this.handleOnChange1} id="lists3" type="checkbox"
-                                                   value={"bezdomnym"} name="list"/>
-                                            <label htmlFor="lists3">bezdomnym</label>
-                                            <input onChange={this.handleOnChange1} id="lists4" type="checkbox"
-                                                   value={"niepełnosprawnym"} name="lists"/>
-                                            <label htmlFor="lists4">niepełnosprawnym</label>
-                                            <input onChange={this.handleOnChange1} id="lists5" type="checkbox"
-                                                   value={"osobom starszym"} name="lists"/>
-                                            <label htmlFor="lists5">osobom starszym</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h4>Wpisz nazwę konkretnej organizacji(opcjonalnie)</h4>
-                                <input onChange={this.handleOnChange} type={"text"} name={"organisation"}/>
-                            </div>
-                        </div>
-                        <div className={"bagsButtons"}>
-                            <input onClick={this.handleButtonPrev} type={"button"} value='Wstecz'/>
-                            <input onClick={this.handleButtonNext} disabled={this.state.button} type={"button"} value='Dalej'/>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </>;
+        let step1 = <Step1 handleOnChangeRadio={this.handleOnChangeRadio} handleButtonNext={this.handleButtonNext}/>;
+
+
+        let step2 = <Step2 handleOnChangeOption={this.handleOnChangeOption} handleButtonPrev={this.handleButtonPrev} handleButtonNext={this.handleButtonNext} />
+
+
+        let step3 = <Step3 handleOnChangeCity={this.handleOnChangeCity} disabled={this.state.button} onChange1={this.handleOnChange1} value={this.state.valueFromCheckbox}
+                           handleButtonPrev={this.handleButtonPrev} handleButtonNext={this.handleButtonNext} handleOnChange={this.handleOnChange} />
+
         let step4 = <>
             <section className={"teddyForm"}>
                 <div className={"yellowInfo"}>
@@ -365,6 +233,8 @@ class TeddyBearForm extends Component {
                 </div>
             </section>
         </>;
+
+
         let step5 = <>
             <section className={"teddyForm"}>
                 <div className={"teddyBackground"}>
@@ -425,6 +295,8 @@ class TeddyBearForm extends Component {
                 </div>
             </section>
         </>;
+
+
         let step6 = <>
             <section className={"teddyForm"}>
                 <div className={"teddyBackground"}>
@@ -439,6 +311,8 @@ class TeddyBearForm extends Component {
                 </div>
             </section>
         </>;
+
+
 
         if (this.state.counter == 2 && valueFromRadio !== null) {
             return step2
