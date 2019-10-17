@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import "./Logout.scss"
-import Navigation from "../Navigation/Navigation";
 import {NavLink} from "react-router-dom";
 import NavigationUser from "../Navigation/NavigationUser";
 

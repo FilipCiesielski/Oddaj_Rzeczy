@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import "./PaginationLocal.scss"
+
 
 
 class PaginationLocal extends Component {

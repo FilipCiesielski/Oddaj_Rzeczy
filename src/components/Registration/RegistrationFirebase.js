@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Navigation from "../Navigation/Navigation";
 import {NavLink} from "react-router-dom";
 import NavigationUser from "../Navigation/NavigationUser";
 
@@ -13,7 +12,7 @@ class RegistrationFirebase extends Component {
         errEmail: false,
         errPsw: false,
         errConfirmPsw: false,
-        errPsw2:false,
+        errPsw2: false,
 
 
     };
@@ -32,13 +31,13 @@ class RegistrationFirebase extends Component {
         let formSend = false;
         let errPsw = false;
         let errEmail = false;
-        let errPsw2=false;
+        let errPsw2 = false;
 
 
         e.preventDefault();
 
 
-        if (mailReg.test(email) && psw.length >= 6 && confirm == psw && confirm.length >= 6) {
+        if (mailReg.test(email) && psw.length >= 6 && confirm === psw && confirm.length >= 6) {
             formSend = true;
         } else {
             if (!mailReg.test(email)) {
@@ -47,7 +46,7 @@ class RegistrationFirebase extends Component {
             if (psw.length < 6) {
                 errPsw = true;
             }
-            if (psw != confirm) {
+            if (psw !== confirm) {
                 errConfirmPsw = true;
             }
         }
@@ -57,71 +56,71 @@ class RegistrationFirebase extends Component {
             this.props.firebase
                 .doCreateUserWithEmailAndPassword(email, psw)
                 .then(authUser => {
-                    console.log("zarejestrowano");
-                    sessionStorage.setItem("email",`${this.state.email}`)
+                    sessionStorage.setItem("email", `${this.state.email}`);
                     this.setState({email: "", password: "", confirm: "",});
                     this.props.history.push("/oddaj-rzeczy")
                 })
                 .catch(error => {
 
                     console.log(error.code)
-                    if(error.code=="auth/email-already-in-use"){
-                        errPsw2=true;
-
+                    if (error.code === "auth/email-already-in-use") {
+                        errPsw2 = true;
 
 
                     }
-                    this.setState({errPsw2:errPsw2});
+                    this.setState({errPsw2: errPsw2});
                 });
         }
 
 
     }
+
     render() {
         return (
             <>
                 <section className={"wraper"}>
-                <div className={"regNav"}><NavigationUser/></div>
-                <section className={"regView"}>
-                    <div className={"regForm"}>
-                        <span>Załóż konto</span>
-                        <div className={"deco"}></div>
-                        <form onSubmit={this.handleOnSubmit}>
-                            <div className={"inputs"}>
-                                <label className={"loginInput"}>Email
-                                    <input type="email" name="email" value={this.state.email}
-                                           onChange={this.handleOnChange}/>
-                                    {this.state.errEmail &&
-                                    <span className="errorMessage" style={{color: 'red'}}>Podany email jest nieprawidłowy!</span>}
-                                </label>
-                                <label className={"loginInput"}>Hasło
-                                    <input type="password" name="password" value={this.state.password}
-                                           onChange={this.handleOnChange}/>
-                                    {this.state.errPsw && <span className="errorMessage" style={{color: 'red'}}>Podane hasło jest za krótkie!</span>}
+                    <div className={"regNav"}><NavigationUser/></div>
+                    <section className={"regView"}>
+                        <div className={"regForm"}>
+                            <span>Załóż konto</span>
+                            <div className={"deco"}></div>
+                            <form onSubmit={this.handleOnSubmit}>
+                                <div className={"inputs"}>
+                                    <label className={"loginInput"}>Email
+                                        <input type="email" name="email" value={this.state.email}
+                                               onChange={this.handleOnChange}/>
+                                        {this.state.errEmail &&
+                                        <span className="errorMessage" style={{color: 'red'}}>Podany email jest nieprawidłowy!</span>}
+                                    </label>
+                                    <label className={"loginInput"}>Hasło
+                                        <input type="password" name="password" value={this.state.password}
+                                               onChange={this.handleOnChange}/>
+                                        {this.state.errPsw &&
+                                        <span className="errorMessage" style={{color: 'red'}}>Podane hasło jest za krótkie!</span>}
 
-                                </label>
-                                <label className={"loginInput"}>Powtórz hasło
-                                    <input type="password" name="confirmPassword" value={this.state.confirmPassword}
-                                           onChange={this.handleOnChange}/>
-                                    {this.state.errConfirmPsw &&
-                                    <span className="errorMessage" style={{color: 'red'}}>Podane hasło jest nieprawidłowe!</span>}
-                                    {this.state.errPsw2 && <span className="errorMessage" style={{color: 'red'}}>Podany email jest już zarejestrowany!</span>}
+                                    </label>
+                                    <label className={"loginInput"}>Powtórz hasło
+                                        <input type="password" name="confirmPassword" value={this.state.confirmPassword}
+                                               onChange={this.handleOnChange}/>
+                                        {this.state.errConfirmPsw &&
+                                        <span className="errorMessage" style={{color: 'red'}}>Podane hasło jest nieprawidłowe!</span>}
+                                        {this.state.errPsw2 &&
+                                        <span className="errorMessage" style={{color: 'red'}}>Podany email jest już zarejestrowany!</span>}
 
-                                </label>
+                                    </label>
+
+                                </div>
+                                <div className={"buttons"}>
+                                    <NavLink
+                                        to={"/logowanie"}>Zaloguj</NavLink>
+                                    <input type='submit' value='Załóż konto' className={"buttonStyle"}/>
+
+                                </div>
 
 
-                            </div>
-                            <div className={"buttons"}>
-                                <NavLink
-                                    to={"/logowanie"}>Zaloguj</NavLink>
-                                <input type='submit' value='Załóż konto' className={"buttonStyle"}/>
-
-                            </div>
-
-
-                        </form>
-                    </div>
-                </section>
+                            </form>
+                        </div>
+                    </section>
                 </section>
             </>
         )

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import "./Login.scss"
-import Navigation from "../Navigation/Navigation";
 import {NavLink} from "react-router-dom";
 import NavigationUser from "../Navigation/NavigationUser";
 
@@ -12,7 +11,7 @@ class LoginFirebase extends Component {
         formSend: false,
         errEmail: false,
         errPsw: false,
-        errPsw2:false,
+        errPsw2: false,
     };
 
     handleOnChange = e => {
@@ -31,7 +30,7 @@ class LoginFirebase extends Component {
         let formSend = false;
         let errPsw = false;
         let errEmail = false;
-        let errPsw2=false;
+        let errPsw2 = false;
         e.preventDefault();
 
         if (!mailReg.test(email)) {
@@ -48,22 +47,18 @@ class LoginFirebase extends Component {
             this.props.firebase
                 .doSignInWithEmailAndPassword(email, psw)
                 .then(authUser => {
-                    console.log(authUser)
-                    sessionStorage.setItem("email",`${this.state.email}`)
+                    sessionStorage.setItem("email", `${this.state.email}`);
                     this.setState({email: "", password: "",});
                     this.props.history.push("/oddaj-rzeczy");
 
                 })
                 .catch(error => {
 
-                    console.log(error.code)
-                    if(error.code=="auth/wrong-password"){
-                        errPsw2=true;
-
-
+                    if (error.code === "auth/wrong-password") {
+                        errPsw2 = true;
 
                     }
-                    this.setState({errPsw2:errPsw2});
+                    this.setState({errPsw2: errPsw2});
                 });
         }
 
@@ -76,40 +71,45 @@ class LoginFirebase extends Component {
         return (
             <>
                 <section className={"wraper"}>
-                <div className={"loginNav"}><NavigationUser/></div>
-                <section className={"loginView"}>
-                    <div className={"loginForm"}>
-                        <span>Zaloguj się</span>
-                        <div className={"deco"}></div>
-                        <form onSubmit={this.handleOnSubmit}>
-                            <div className={"inputs"}>
-                                <label className={"loginInput"}>Email
-                                    <input type="email" name="email" value={this.state.email}
-                                           onChange={this.handleOnChange}/>
-                                    {this.state.errEmail &&
-                                    <span className="errorMessage" style={{color: 'red'}}>Podany email jest nieprawidłowy!</span>}
-                                </label>
-                                <label className={"loginInput"}>Hasło
-                                    <input type="password" name="password" value={this.state.password}
-                                           onChange={this.handleOnChange}/>
-                                    {this.state.errPsw && <span className="errorMessage" style={{color: 'red'}}>Podane hasło jest za krótkie!<br/></span>}
-                                    {this.state.errPsw2 && <span className="errorMessage" style={{color: 'red'}}>Podane hasło jest nieprawidłowe!</span>}
+                    <div className={"loginNav"}><NavigationUser/></div>
+                    <section className={"loginView"}>
+                        <div className={"loginForm"}>
+                            <span>Zaloguj się</span>
+                            <div className={"deco"}></div>
+                            <form onSubmit={this.handleOnSubmit}>
 
-                                </label>
+                                <div className={"inputs"}>
 
+                                    <label className={"loginInput"}>Email
+                                        <input type="email" name="email" value={this.state.email}
+                                               onChange={this.handleOnChange}/>
+                                        {this.state.errEmail &&
+                                        <span className="errorMessage" style={{color: 'red'}}>Podany email jest nieprawidłowy!</span>}
+                                    </label>
 
-                            </div>
-                            <div className={"buttons"}>
-                                <NavLink to={"/rejestracja"}>Załóż
-                                    konto</NavLink>
-                                <input type='submit' value='Zaloguj' className={"buttonStyle"}/>
+                                    <label className={"loginInput"}>Hasło
+                                        <input type="password" name="password" value={this.state.password}
+                                               onChange={this.handleOnChange}/>
+                                        {this.state.errPsw &&
+                                        <span className="errorMessage" style={{color: 'red'}}>Podane hasło jest za krótkie!<br/></span>}
+                                        {this.state.errPsw2 &&
+                                        <span className="errorMessage" style={{color: 'red'}}>Podane hasło jest nieprawidłowe!</span>}
 
-                            </div>
+                                    </label>
 
 
-                        </form>
-                    </div>
-                </section>
+                                </div>
+                                <div className={"buttons"}>
+                                    <NavLink to={"/rejestracja"}>Załóż
+                                        konto</NavLink>
+                                    <input type='submit' value='Zaloguj' className={"buttonStyle"}/>
+
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </section>
                 </section>
             </>
         )

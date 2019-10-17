@@ -2,17 +2,20 @@ import React, {Component} from 'react';
 import "./TeddyBearForm.scss"
 
 
-class Step3 extends Component{
-    constructor(props){
+class Step3 extends Component {
+    constructor(props) {
         super(props)
     }
+
     render() {
+        console.log(this.props.button)
         return (
             <section className={"teddyForm"}>
                 <div className={"yellowInfo"}>
                     <div>
                         <h2>Ważne!</h2>
-                        <p>Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować
+                        <p>Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też
+                            filtrować
                             organizacje po ich lokalizacji bądź celu ich pomocy.</p>
                     </div>
                 </div>
@@ -34,19 +37,24 @@ class Step3 extends Component{
                                     <h4>Komu chcesz pomóc?</h4>
                                     <div className={"brick"}>
                                         <div className={"go"}>
-                                            <input onChange={this.props.handleOnChange1} id="lists1" type="checkbox"
+                                            <input onChange={this.props.handleOnChangeCheckbox} id="lists1"
+                                                   type="checkbox"
                                                    value={"dzieciom"} name="lists"/>
                                             <label htmlFor="lists1">dzieciom</label>
-                                            <input onChange={this.props.handleOnChange1} id="lists2" type="checkbox"
+                                            <input onChange={this.props.handleOnChangeCheckbox} id="lists2"
+                                                   type="checkbox"
                                                    value={"samotnym matkom"} name="lists"/>
                                             <label htmlFor="lists2">samotnym matkom</label>
-                                            <input onChange={this.props.handleOnChange1} id="lists3" type="checkbox"
+                                            <input onChange={this.props.handleOnChangeCheckbox} id="lists3"
+                                                   type="checkbox"
                                                    value={"bezdomnym"} name="list"/>
                                             <label htmlFor="lists3">bezdomnym</label>
-                                            <input onChange={this.props.handleOnChange1} id="lists4" type="checkbox"
+                                            <input onChange={this.props.handleOnChangeCheckbox} id="lists4"
+                                                   type="checkbox"
                                                    value={"niepełnosprawnym"} name="lists"/>
                                             <label htmlFor="lists4">niepełnosprawnym</label>
-                                            <input onChange={this.props.handleOnChange1} id="lists5" type="checkbox"
+                                            <input onChange={this.props.handleOnChangeCheckbox} id="lists5"
+                                                   type="checkbox"
                                                    value={"osobom starszym"} name="lists"/>
                                             <label htmlFor="lists5">osobom starszym</label>
                                         </div>
@@ -58,13 +66,15 @@ class Step3 extends Component{
                         </div>
                         <div className={"bagsButtons"}>
                             <input onClick={this.props.handleButtonPrev} type={"button"} value='Wstecz'/>
-                            <input onClick={this.props.handleButtonNext} disabled={this.props.button} type={"button"} value='Dalej'/>
+                            <input onClick={this.props.handleButtonNext} type={"button"} value='Dalej'
+                                   disabled={this.props.button}/>
                         </div>
                     </div>
                 </div>
             </section>
 
         )
-    }}
+    }
+}
 
 export default Step3

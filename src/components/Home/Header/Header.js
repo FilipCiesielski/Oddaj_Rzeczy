@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import "./Header.scss"
 import Navigation from "../../Navigation/Navigation";
-import {Link, NavLink} from "react-router-dom";
+import { NavLink} from "react-router-dom";
 
 class Header extends Component {
     render() {

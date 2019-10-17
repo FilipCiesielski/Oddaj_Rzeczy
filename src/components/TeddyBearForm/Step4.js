@@ -1,0 +1,81 @@
+import React, {Component} from 'react';
+import "./TeddyBearForm.scss"
+
+
+class Step4 extends Component {
+    constructor(props) {
+        super(props)
+    }
+
+    render() {
+        return (
+            <section className={"teddyForm"}>
+                <div className={"yellowInfo"}>
+                    <div>
+                        <h2>Ważne!</h2>
+                        <p>Podaj adres oraz odbiór terminu rzeczy.</p>
+                    </div>
+                </div>
+                <div className={"teddyBackground"}>
+                    <span>Kro 4/4</span>
+                    <div className={"stepsForm"}>
+                        <h2>Podaj adres oraz termin odbioru rzeczy przez kuriera</h2>
+                        <div className={"forms"}>
+                            <div>
+                                <h4>Adres odbioru:</h4>
+                                <form onSubmit={this.props.handleOnSubmit}>
+                                    <label>
+                                        Ulica
+                                        <input name={"street"} onChange={this.props.handleOnChange}
+                                               value={this.props.street}/>
+                                    </label>
+                                    <label>
+                                        Miasto
+                                        <input name={"city"} type="city" onChange={this.props.handleOnChange}
+                                               value={this.props.city}/>
+                                    </label>
+                                    <label>
+                                        Kod<br/> pocztowy
+                                        <input name={"postcode"} type={"postcode"} onChange={this.props.handleOnChange}
+                                               value={this.props.postcode}/>
+                                    </label>
+                                    <label>
+                                        Numer telefonu
+                                        <input name={"phone"} type={"tel"} onChange={this.props.handleOnChange}
+                                               value={this.props.phone}/>
+                                    </label>
+                                </form>
+                            </div>
+                            <div>
+                                <h4>Termin odbioru:</h4>
+                                <form onSubmit={this.props.handleOnSubmit}>
+                                    <label>
+                                        Data
+                                        <input type="date" name="date" onChange={this.props.handleOnChange}
+                                               value={this.props.date}/>
+                                    </label>
+                                    <label>
+                                        Godzina
+                                        <input type="time" name="time" min="06:00" max="19:00"
+                                               onChange={this.props.handleOnChange}/>
+                                    </label>
+                                    <label>
+                                        Uwagi dla kuriera
+                                        <textarea name={"message"} onChange={this.props.handleOnChange}
+                                                  value={this.props.message}/>
+                                    </label>
+                                </form>
+                            </div>
+                        </div>
+                        <div className={"bagsButtons"}>
+                            <input onClick={this.props.handleButtonPrev} type={"button"} value='Wstecz'/>
+                            <input onClick={this.props.handleOnSubmit} type={"button"} value='Dalej'/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        )
+    }
+}
+
+export default Step4

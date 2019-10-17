@@ -5,7 +5,7 @@ import {NavLink} from "react-router-dom";
 class FourSteps extends Component{
     render() {
         const styleButton={
-            color:"grey"
+            styleButtonColor:"grey"
         }
         return(
             <div name="FourSteps" className={"fourSteps container"}>
