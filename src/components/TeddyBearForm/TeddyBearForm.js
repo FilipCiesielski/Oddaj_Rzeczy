@@ -80,7 +80,7 @@ class TeddyBearForm extends Component {
             arrayValue.push(e.target.value);
             this.setState({valueFromCheckbox: arrayValue})
         } else if (e.target.checked == false && this.state.valueFromCheckbox.indexOf(e.target.value) > -1) {
-            let arrayValue = this.state.valueFromCheckbox;
+           let arrayValue = this.state.valueFromCheckbox;
             arrayValue.splice(arrayValue.indexOf(e.target.value),1);
             this.setState({valueFromCheckbox: arrayValue});
 
