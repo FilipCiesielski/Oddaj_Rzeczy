@@ -1,0 +1,78 @@
+@import "../../scss/settings/colors";
+
+.optionSelect{
+  height: 10rem;
+}
+.optionBrick {
+
+  display: flex;
+  flex-direction: column;
+  h4 {
+    margin-top: 1rem;
+  }
+  h6{
+    margin:1rem 1rem 1rem 0;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+  .brick {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    width: 30rem;
+
+    input[type="checkbox"] {
+      display: none;
+    }
+    .checkBOX {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+      width: 40rem;
+      user-select: none;
+
+      label {
+        cursor: pointer;
+        -webkit-font-smoothing: antialiased;
+        text-align: center;
+        border: 1px solid map_get($colors, "darkgrey");
+        padding: 0.5rem;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        margin-right: 1.3rem;
+      }
+      input[type=checkbox] {
+        display: none;
+      }
+      input:checked + label {
+        border: 1px solid map_get($colors, "darkgrey");
+        color: map_get($colors, "darkgrey");
+        background-color: map_get($colors, "yellow");
+      }
+      input.checkbox:checked + label:before {
+        content: "";
+      }
+    }
+  }
+}
+p {
+  margin-right: 1rem;
+}
+select {
+  text-align: center;
+  background-color: #EDECEA;
+  width: 12rem;
+  height: 2rem;
+  font-size: 1rem;
+  border: 1px solid map-get($colors, "darkgrey");;
+  option {
+    background-color: #EDECEA;
+  }
+}

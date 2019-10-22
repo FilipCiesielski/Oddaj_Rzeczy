@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import "./TeddyBearForm.scss"
+import "./Step2.scss"
 
 
 class Step2 extends Component{
@@ -17,7 +17,7 @@ class Step2 extends Component{
                     </div>
                 </div>
                 <div className={"teddyBackground"}>
-                    <span>Krok 2/4</span>
+                    <span className={"stepsNumber"}>Krok 2/4</span>
                     <div className={"stepsForm"}>
                         <h2>Podaj liczbę 60l worków, które spakowałeś/aś rzeczy:</h2>
 

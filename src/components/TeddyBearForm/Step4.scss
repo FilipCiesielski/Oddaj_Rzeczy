@@ -1,0 +1,54 @@
+@import "../../scss/settings/colors";
+
+
+.forms {
+  height: 40rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+
+  h4 {
+    margin-bottom: 1rem;
+  }
+
+  div {
+    height: 5rem;
+    width: 48%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-right: 2rem;
+
+    p {
+      text-align: right;
+    }
+
+
+    label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      align-items: center;
+    }
+
+    input {
+      border: 1px solid map_get($colors, "darkgrey");
+      background: none;
+      margin-right: 1rem;
+      height: 2rem;
+    }
+
+    textarea {
+      border: 1px solid map_get($colors, "darkgrey");
+      height: 5.5rem;
+      background: none;
+      width: 72%;
+    }
+
+    input[type=date], input[type=time] {
+      width: 60%;
+      margin-right: 0;
+    }
+  }
+}

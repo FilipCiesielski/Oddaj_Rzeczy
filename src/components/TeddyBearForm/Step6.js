@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import "./TeddyBearForm.scss"
+import "./Step6.scss"
 
 
 class Step6 extends Component {

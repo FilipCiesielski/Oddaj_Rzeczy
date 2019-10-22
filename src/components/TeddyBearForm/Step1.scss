@@ -1,0 +1,56 @@
+@import "../../scss/settings/colors";
+
+
+  .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    height: 40rem;
+    margin-top: 4rem;
+    margin-left: 6%;
+    input[type="radio"] {
+      display: none;
+    }
+    .container1 {
+      display: flex;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 22px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+    .checkmark {
+      position: absolute;
+           left: -2rem;
+      height: 1.5625rem;
+      width: 1.5625rem;
+      background: none;
+      border: 1px solid map_get($colors, "darkgrey");
+    }
+    .container1:hover input ~ .checkmark {
+      background-color: map_get($colors, "yellow");
+    }
+    .container1 input:checked ~ .checkmark {
+      background-color: map_get($colors, "yellow");
+    }
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    .container1 input:checked ~ .checkmark:after {
+      display: block;
+    }
+}

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import "./TeddyBearForm.scss"
+import "./Step4.scss"
 
 
 class Step4 extends Component {
@@ -17,43 +17,65 @@ class Step4 extends Component {
                     </div>
                 </div>
                 <div className={"teddyBackground"}>
-                    <span>Kro 4/4</span>
+                    <span className={"stepsNumber"}>Kro 4/4</span>
                     <div className={"stepsForm"}>
                         <h2>Podaj adres oraz termin odbioru rzeczy przez kuriera</h2>
                         <div className={"forms"}>
                             <div>
                                 <h4>Adres odbioru:</h4>
                                 <form onSubmit={this.props.handleOnSubmit}>
+                                    {this.props.errStreet &&
+                                    <p className="errorMessage" style={{color: 'red', fontSize: "0.8rem"}}>Nazwa ulicy
+                                        nieprawidłowa!</p>}
                                     <label>
                                         Ulica
                                         <input name={"street"} onChange={this.props.handleOnChange}
                                                value={this.props.street}/>
                                     </label>
+                                    {this.props.errCity &&
+                                    <p className="errorMessage" style={{color: 'red', fontSize: "0.8rem"}}>Nazwa miasta
+                                        nieprawidłowa!</p>}
+
                                     <label>
                                         Miasto
                                         <input name={"city"} type="city" onChange={this.props.handleOnChange}
                                                value={this.props.city}/>
+
                                     </label>
+                                    {this.props.errPostcode && <p className="errorMessage" style={{
+                                        color: 'red',
+                                        marginBottom: "-0.5rem",
+                                        fontSize: "0.8rem"
+                                    }}>Kod nieprawidłowy!</p>}
                                     <label>
-                                        Kod<br/> pocztowy
+                                        Kod<br/>pocztowy
                                         <input name={"postcode"} type={"postcode"} onChange={this.props.handleOnChange}
                                                value={this.props.postcode}/>
                                     </label>
+                                    {this.props.errPhone && <p className="errorMessage" style={{
+                                        color: 'red',
+                                        marginBottom: "-0.5rem",
+                                        fontSize: "0.8rem"
+                                    }}>Numer nieprawidłowy!</p>}
                                     <label>
                                         Numer telefonu
                                         <input name={"phone"} type={"tel"} onChange={this.props.handleOnChange}
                                                value={this.props.phone}/>
                                     </label>
+
                                 </form>
+
                             </div>
                             <div>
                                 <h4>Termin odbioru:</h4>
                                 <form onSubmit={this.props.handleOnSubmit}>
+
                                     <label>
                                         Data
                                         <input type="date" name="date" onChange={this.props.handleOnChange}
                                                value={this.props.date}/>
                                     </label>
+
                                     <label>
                                         Godzina
                                         <input type="time" name="time" min="06:00" max="19:00"

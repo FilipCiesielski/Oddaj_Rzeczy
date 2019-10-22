@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import "./TeddyBearForm.scss"
+import "./Step3.scss"
 
 
 class Step3 extends Component {
@@ -20,7 +20,7 @@ class Step3 extends Component {
                     </div>
                 </div>
                 <div className={"teddyBackground"}>
-                    <span>Krok 3/4</span>
+                    <span className={"stepsNumber"}>Krok 3/4</span>
                     <div className={"stepsForm"}>
                         <h2>Lokalizacja:</h2>
                         <div className={"bags"}>
@@ -35,33 +35,39 @@ class Step3 extends Component {
                                 </select>
                                 <div className={"optionBrick"}>
                                     <h4>Komu chcesz pomóc?</h4>
+
                                     <div className={"brick"}>
-                                        <div className={"go"}>
+                                        <div className={"checkBOX"}>
                                             <input onChange={this.props.handleOnChangeCheckbox} id="lists1"
                                                    type="checkbox"
                                                    value={"dzieciom"} name="lists"/>
                                             <label htmlFor="lists1">dzieciom</label>
+
                                             <input onChange={this.props.handleOnChangeCheckbox} id="lists2"
                                                    type="checkbox"
                                                    value={"samotnym matkom"} name="lists"/>
                                             <label htmlFor="lists2">samotnym matkom</label>
+
                                             <input onChange={this.props.handleOnChangeCheckbox} id="lists3"
                                                    type="checkbox"
                                                    value={"bezdomnym"} name="list"/>
                                             <label htmlFor="lists3">bezdomnym</label>
+
                                             <input onChange={this.props.handleOnChangeCheckbox} id="lists4"
                                                    type="checkbox"
                                                    value={"niepełnosprawnym"} name="lists"/>
                                             <label htmlFor="lists4">niepełnosprawnym</label>
+
                                             <input onChange={this.props.handleOnChangeCheckbox} id="lists5"
                                                    type="checkbox"
                                                    value={"osobom starszym"} name="lists"/>
+
                                             <label htmlFor="lists5">osobom starszym</label>
                                         </div>
+                                        <h6>*zaznacz powyżej</h6>
                                     </div>
                                 </div>
-                                <h4>Wpisz nazwę konkretnej organizacji(opcjonalnie)</h4>
-                                <input onChange={this.props.handleOnChange} type={"text"} name={"organisation"}/>
+
                             </div>
                         </div>
                         <div className={"bagsButtons"}>

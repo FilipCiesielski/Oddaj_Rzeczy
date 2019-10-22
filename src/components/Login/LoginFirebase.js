@@ -85,6 +85,8 @@ class LoginFirebase extends Component {
                                                onChange={this.handleOnChange}/>
                                         {this.state.errEmail &&
                                         <span className="errorMessage" style={{color: 'red'}}>Podany email jest nieprawidłowy!</span>}
+                                        {this.state.errPsw2 &&
+                                        <span className="errorMessage" style={{color: 'red'}}>Podany email lub hasło jest nieprawidłowe!</span>}
                                     </label>
 
                                     <label className={"loginInput"}>Hasło
@@ -93,7 +95,7 @@ class LoginFirebase extends Component {
                                         {this.state.errPsw &&
                                         <span className="errorMessage" style={{color: 'red'}}>Podane hasło jest za krótkie!<br/></span>}
                                         {this.state.errPsw2 &&
-                                        <span className="errorMessage" style={{color: 'red'}}>Podane hasło jest nieprawidłowe!</span>}
+                                        <span className="errorMessage" style={{color: 'red'}}>Podany email lub hasło jest nieprawidłowe!</span>}
 
                                     </label>
 

@@ -1,14 +1,16 @@
 import React, {Component} from 'react';
-import "./TeddyBearForm.scss"
+import "./Step5.scss"
 
 
-class Step5 extends Component{
-    constructor(props){
+class Step5 extends Component {
+    constructor(props) {
         super(props)
     }
+
     render() {
         return (
             <section className={"teddyForm"}>
+
                 <div className={"teddyBackground"}>
                     <h2 className={"resume"}>Podsumowanie Twojej darowizny</h2>
                     <div className={"stepsForm"}>
@@ -67,6 +69,7 @@ class Step5 extends Component{
                 </div>
             </section>
         )
-    }}
+    }
+}
 
 export default Step5

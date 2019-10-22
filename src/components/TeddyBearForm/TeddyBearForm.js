@@ -94,22 +94,25 @@ class TeddyBearForm extends Component {
 
     handleOnSubmit = e => {
         e.preventDefault();
-        const cityReg = /^[a-zA-Z]{2,}$/i;
+        this.setState({
+            errStreet: false, errCity: false, errPostcode: false, errPhone: false, errDate: false, errTime: false,
+        });
+
         const postcodeReg = /[0-9]{2}-[0-9]{3}$/i;
-        const phoneReg = /^\d{9}$/;
+        const phoneReg = /^\d{3}-?\d{3}-?\d{3}$/;
 
 
-        let {street, city, postcode, phone, date, errPostcode, errStreet, errCity, errDate, errPhone} = this.state;
+        let {street, city, postcode, phone, date, time, errPostcode, errStreet, errCity, errDate, errTime, errPhone} = this.state;
 
 
-        if (street.length > 2 && cityReg.test(city) && postcodeReg.test(postcode) && phoneReg.test(phone)) {
+        if (street.length > 2 && city.length > 2 && postcodeReg.test(postcode) && phoneReg.test(phone)) {
             this.setState({formSend: true, counter: this.state.counter + 1})
         } else {
-            if (street.length > 2) {
-                this.setState({errStreet: true,});
+            if (street.length < 2) {
+                this.setState({errStreet: true});
                 console.log(errStreet)
             }
-            if (!cityReg.test(city)) {
+            if (city.length < 2) {
                 this.setState({errCity: true});
                 console.log(errCity)
             }
@@ -121,8 +124,8 @@ class TeddyBearForm extends Component {
                 this.setState({errPhone: true});
                 console.log(errPhone)
             }
-        }
 
+        }
     };
 
     render() {
@@ -141,7 +144,14 @@ class TeddyBearForm extends Component {
                            handleOnChange={this.handleOnChange}/>;
 
         let step4 = <Step4 handleOnSubmit={this.handleOnSubmit} handleButtonPrev={this.handleButtonPrev}
-                           handleButtonNext={this.handleButtonNext} handleOnChange={this.handleOnChange}/>;
+                           handleButtonNext={this.handleButtonNext} handleOnChange={this.handleOnChange}
+                           street={this.state.street} city={this.state.city} postcode={this.state.postcode}
+                           phone={this.state.phone}
+                           date={this.state.date} time={this.state.time} message={this.state.message}
+                           errStreet={this.state.errStreet}
+                           errCity={this.state.errCity} errPostcode={this.state.errPostcode}
+                           errPhone={this.state.errPhone}
+                           errDate={this.state.date} errTime={this.state.time}/>;
 
 
         let step5 = <Step5 valueFromRadio={this.state.valueFromRadio} valueFromOption={this.state.valueFromOption}
