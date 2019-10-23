@@ -22,7 +22,7 @@ class Step2 extends Component{
                         <h2>Podaj liczbę 60l worków, które spakowałeś/aś rzeczy:</h2>
 
                         <div className={"bags"}>
-                            <h7>Liczba 60L worków:</h7>
+                            <p>Liczba 60L worków:</p>
                             <select value={this.props.valueFromOption} onChange={this.props.handleOnChangeOption}>
                                 <option value="" disabled hidden>-wybierz-</option>
                                 <option value="1">1</option>
