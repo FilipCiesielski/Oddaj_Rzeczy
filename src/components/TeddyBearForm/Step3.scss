@@ -10,7 +10,7 @@
   h4 {
     margin-top: 1rem;
   }
-  h6{
+  span{
     margin:1rem 1rem 1rem 0;
   }
   p {
@@ -62,16 +62,15 @@
     }
   }
 }
-p {
-  margin-right: 1rem;
-}
-select {
+
+select{
   text-align: center;
   background-color: #EDECEA;
   width: 12rem;
   height: 2rem;
   font-size: 1rem;
-  border: 1px solid map-get($colors, "darkgrey");;
+  border: 1px solid map-get($colors, "darkgrey");
+
   option {
     background-color: #EDECEA;
   }

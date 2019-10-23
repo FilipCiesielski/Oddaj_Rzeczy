@@ -98,31 +98,38 @@ class TeddyBearForm extends Component {
             errStreet: false, errCity: false, errPostcode: false, errPhone: false, errDate: false, errTime: false,
         });
 
+
         const postcodeReg = /[0-9]{2}-[0-9]{3}$/i;
         const phoneReg = /^\d{3}-?\d{3}-?\d{3}$/;
 
 
-        let {street, city, postcode, phone, date, time, errPostcode, errStreet, errCity, errDate, errTime, errPhone} = this.state;
+        const {street, city, postcode, phone, date, time} = this.state;
 
-
-        if (street.length > 2 && city.length > 2 && postcodeReg.test(postcode) && phoneReg.test(phone)) {
+        console.log(date)
+        if (street.length > 2 && city.length > 2 && postcodeReg.test(postcode) && phoneReg.test(phone) && date.length>0 && time.length>0) {
             this.setState({formSend: true, counter: this.state.counter + 1})
         } else {
             if (street.length < 2) {
                 this.setState({errStreet: true});
-                console.log(errStreet)
+
             }
             if (city.length < 2) {
                 this.setState({errCity: true});
-                console.log(errCity)
+
             }
             if (!postcodeReg.test(postcode)) {
                 this.setState({errPostcode: true});
-                console.log(errPostcode)
+
             }
             if (!phoneReg.test(phone)) {
                 this.setState({errPhone: true});
-                console.log(errPhone)
+
+            }
+            if(date.length===0){
+                this.setState({errDate: true})
+            }
+            if(time.length===0){
+                this.setState({errTime: true})
             }
 
         }
