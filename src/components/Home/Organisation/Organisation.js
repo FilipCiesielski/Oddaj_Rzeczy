@@ -65,11 +65,11 @@ class Organisation extends Component {
     render() {
 
         return (
-            <div name="Organisation" className={"organisation container"}>
-                <section className={"whoWeHelp"}>
+            <div name="Organisation" className={"organization"}>
+                <section className={"organization__header"}>
                     <span>Komu pomagamy?</span>
-                    <div className={"deco"}></div>
-                    <div className={"whoWeHelpButton"}>
+                    <div className={"organization__header__decorations"}></div>
+                    <div className={"organization__buttons"}>
                         <button className={this.state.border1} onClick={this.handleOnButtonFoundation}>Fundacjom
                         </button>
                         <button className={this.state.border2}
@@ -83,7 +83,7 @@ class Organisation extends Component {
                     {this.state.organisation && spanOrganisation}
                     {this.state.local && spanLocal}
                 </section>
-                <div className="foot">
+                <div className="organisation__footer">
                     <div>
                         {this.state.foundation && <PaginationFoundation/>}
                     </div>

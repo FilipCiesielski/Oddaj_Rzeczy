@@ -9,15 +9,15 @@ class Step6 extends Component {
 
     render() {
         return (
-            <section className={"teddyForm"}>
-                <div className={"teddyBackground"}>
-                    <div className={"outro"}>
+            <section className={"teddyBearForm"}>
+                <div className={"teddyBearForm__backgroundPhoto"}>
+                    <div className={"teddyBearForm__goodbye"}>
                         <h1>
                             Dziękujemy za przesłanie formularza.<br/>
                             Na maila wyślemy wszelkie<br/>
                             informacje o odbiorze.
                         </h1>
-                        <div className={"deco"}></div>
+                        <div className={"teddyBearForm__goodbye__decorations"}></div>
                     </div>
                 </div>
             </section>

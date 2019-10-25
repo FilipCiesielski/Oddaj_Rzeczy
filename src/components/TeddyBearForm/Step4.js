@@ -10,18 +10,18 @@ class Step4 extends Component {
     render() {
 
         return (
-            <section className={"teddyForm"}>
-                <div className={"yellowInfo"}>
+            <section className={"teddyBearForm"}>
+                <div className={"teddyBearForm__info"}>
                     <div>
                         <h2>Ważne!</h2>
                         <p>Podaj adres oraz odbiór terminu rzeczy.</p>
                     </div>
                 </div>
-                <div className={"teddyBackground"}>
-                    <span className={"stepsNumber"}>Kro 4/4</span>
-                    <div className={"stepsForm"}>
+                <div className={"teddyBearForm__backgroundPhoto"}>
+                    <span className={"teddyBearForm__numberOfSteps"}>Kro 4/4</span>
+                    <div className={"teddyBearForm__box"}>
                         <h2>Podaj adres oraz termin odbioru rzeczy przez kuriera</h2>
-                        <div className={"forms"}>
+                        <div className={"teddyBearForm__box__form"}>
                             <div>
                                 <h4>Adres odbioru:</h4>
                                 <form onSubmit={this.props.handleOnSubmit}>
@@ -96,7 +96,7 @@ class Step4 extends Component {
                                 </form>
                             </div>
                         </div>
-                        <div className={"bagsButtons"}>
+                        <div className={"teddyBearForm__buttons"}>
                             <input onClick={this.props.handleButtonPrev} type={"button"} value='Wstecz'/>
                             <input onClick={this.props.handleOnSubmit} type={"button"} value='Dalej'/>
                         </div>

@@ -1,6 +1,6 @@
 @import "../../scss/settings/colors";
 
-div.outro {
+.teddyBearForm__goodbye {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,7 +15,7 @@ div.outro {
     justify-items: center;
     font-size: 2rem;
   }
-  .deco {
+  .teddyBearForm__goodbye__decorations {
     background-image: url("../../assets/Decoration.svg");
     width: 18%;
     height: 2rem;

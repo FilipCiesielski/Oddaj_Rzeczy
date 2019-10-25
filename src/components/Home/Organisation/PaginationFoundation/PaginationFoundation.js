@@ -81,7 +81,7 @@ class PaginationFoundation extends Component {
         const currentFoundations = foundation.slice(indexOfFirstFoundation, indexOfLastFoundation);
         const renderFoundation = currentFoundations.map((foundation, index) => {
             return (
-                <ul key={index} className="foundationInfo">
+                <ul key={index} className="organisation__footer--foundationInfo">
                     <li><h3>Fundacja {foundation.title}</h3> <p>Cel i misja: {foundation.mission}</p></li>
                     <span>{foundation.givenAway}</span>
                 </ul>
@@ -90,7 +90,7 @@ class PaginationFoundation extends Component {
         return (
             <>
                 {renderFoundation}
-                <div className="buttons">
+                <div className="organisation__footer--buttons">
                     <button id={1} className={this.state.border1} onClick={(e) => this.handleClick(e, 1)}>1</button>
                     <button id={2} className={this.state.border2} onClick={(e) => this.handleClick(e, 2)}>2</button>
                     <button id={3} className={this.state.border3} onClick={(e) => this.handleClick(e, 3)}>3</button>

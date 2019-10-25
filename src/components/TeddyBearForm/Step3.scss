@@ -1,9 +1,7 @@
 @import "../../scss/settings/colors";
 
-.optionSelect{
-  height: 10rem;
-}
-.optionBrick {
+//
+.teddyBearForm__box__checkbox {
 
   display: flex;
   flex-direction: column;
@@ -16,19 +14,29 @@
   p {
     font-size: 0.8rem;
   }
-  .brick {
+  select {
+    text-align: center;
+    background-color: #EDECEA;
+    width: 12rem;
+    height: 2rem;
+    font-size: 1rem;
+    border: 1px solid map-get($colors, "darkgrey");
+  }
+    option {
+      background-color: #EDECEA;
+    }
+  .teddyBearForm__box_checkbox__items {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
-    text-align: center;
     margin-top: 1rem;
     flex-wrap: wrap;
     width: 30rem;
+    height: 12rem;
 
     input[type="checkbox"] {
       display: none;
     }
-    .checkBOX {
+    .teddyBearForm__box_checkbox--options{
       display: flex;
       justify-content: flex-start;
       align-items: center;
@@ -63,15 +71,5 @@
   }
 }
 
-select{
-  text-align: center;
-  background-color: #EDECEA;
-  width: 12rem;
-  height: 2rem;
-  font-size: 1rem;
-  border: 1px solid map-get($colors, "darkgrey");
 
-  option {
-    background-color: #EDECEA;
-  }
-}
+

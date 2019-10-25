@@ -78,28 +78,28 @@ class RegistrationFirebase extends Component {
     render() {
         return (
             <>
-                <section className={"wraper"}>
-                    <div className={"regNav"}><NavigationUser/></div>
-                    <section className={"regView"}>
-                        <div className={"regForm"}>
+                <section className={"jumbotron"}>
+                    <div className={"navigation"}><NavigationUser/></div>
+                    <section className={"registration"}>
+                        <div className={"registration_box"}>
                             <span>Załóż konto</span>
-                            <div className={"deco"}></div>
-                            <form onSubmit={this.handleOnSubmit}>
-                                <div className={"inputs"}>
-                                    <label className={"loginInput"}>Email
+                            <div className={"registration_box__decorations"}></div>
+                            <form className={"registration__form"} onSubmit={this.handleOnSubmit}>
+                                <div className={"registration__form__items"}>
+                                    <label className={"registration__form--inputs"}>Email
                                         <input type="email" name="email" value={this.state.email}
                                                onChange={this.handleOnChange}/>
                                         {this.state.errEmail &&
                                         <span className="errorMessage" style={{color: 'red'}}>Podany email jest nieprawidłowy!</span>}
                                     </label>
-                                    <label className={"loginInput"}>Hasło
+                                    <label className={"registration__form--inputs"}>Hasło
                                         <input type="password" name="password" value={this.state.password}
                                                onChange={this.handleOnChange}/>
                                         {this.state.errPsw &&
                                         <span className="errorMessage" style={{color: 'red'}}>Podane hasło jest za krótkie!</span>}
 
                                     </label>
-                                    <label className={"loginInput"}>Powtórz hasło
+                                    <label className={"registration__form--inputs"}>Powtórz hasło
                                         <input type="password" name="confirmPassword" value={this.state.confirmPassword}
                                                onChange={this.handleOnChange}/>
                                         {this.state.errConfirmPsw &&
@@ -110,7 +110,7 @@ class RegistrationFirebase extends Component {
                                     </label>
 
                                 </div>
-                                <div className={"buttons"}>
+                                <div className={"registration__form--buttons"}>
                                     <NavLink
                                         to={"/logowanie"}>Zaloguj</NavLink>
                                     <input type='submit' value='Załóż konto' className={"buttonStyle"}/>

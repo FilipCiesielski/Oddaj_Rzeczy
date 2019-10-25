@@ -1,11 +1,11 @@
 @import "../../scss/settings/colors";
 
 
-  .logoInfo {
+  .teddyBearForm__box__logo {
     display: flex;
     flex-direction: column;
 
-    section {
+    .teddyBearForm__box__logo__items {
       display: flex;
       align-items: center;
       width: 80%;
@@ -16,7 +16,7 @@
         font-size: 1rem;
       }
 
-      div.tShirt {
+      .box__logo--tShirt {
         background-image: url("../../assets/Icon-1.svg");
         background-size: contain;
         background-repeat: no-repeat;
@@ -24,7 +24,7 @@
         height: 3rem;
       }
 
-      div.recycling {
+      .box__logo--recycling {
         background-image: url("../../assets/Icon-4.svg");
         background-size: contain;
         background-repeat: no-repeat;
@@ -42,7 +42,7 @@
 
     }
   }
-  .forms {
+  .teddyBearForm__box__form {
     height: 40rem;
     display: flex;
     justify-content: space-between;
@@ -62,7 +62,7 @@
       padding-right: 2rem;
     }
 
-    div.resumeInfo {
+  .teddyBearForm__box__form--summaryInfo {
       display: flex;
       justify-content: space-between;
       margin-bottom: 1rem;

@@ -11,7 +11,7 @@ class Home extends Component {
     render() {
         return (
             <>
-                <section className={"wraper"}>
+                <section className={"jumbotron"}>
                     <Header/>
                     <ThreeColumns/>
                     <FourSteps/>

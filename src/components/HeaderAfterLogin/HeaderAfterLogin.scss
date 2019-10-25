@@ -1,14 +1,25 @@
 @import "../../scss/settings/colors";
 
 
-.header2 {
+.headerAfterLogin {
   color: map_get($colors, "darkgrey");
   height: 52rem;
   display: flex;
   justify-content: space-between;
   margin-right: 10%;
 
-  .main2 {
+  .headerAfterLogin__backgroundPhoto{
+    background-image: url("../../assets/Form-Hero-Image.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    height: 100%;
+    width: 50%;
+    margin-right: 0;
+
+
+  }
+  .headerAfterLogin__main {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -16,7 +27,7 @@
   }
 
 
-  .deco {
+  .headerAfterLogin__main__decorations {
     background-image: url("../../assets/Decoration.svg");
     width: 100%;
     height: 2rem;
@@ -27,15 +38,11 @@
 
   }
 
-  .home2 {
-    margin-right: 5rem;
 
-    article {
+  .headerAfterLogin__main__article {
       font-size: 2rem;
       text-align: center;
-      margin-bottom: 2rem;
-      margin-top: 7rem;
-
+      margin: 7rem 5rem 2rem 0;
 
     }
 
@@ -51,13 +58,13 @@
 
     }
 
-    .kickContainer {
+    .headerAfterLogin__main__square{
       display: flex;
       align-items: center;
       justify-content: center;
       margin-top: 5rem;
 
-      .kickQ {
+      .headerAfterLogin__main__square--item {
         color: map_get($colors, "darkgrey");
         display: flex;
         align-items: center;
@@ -88,20 +95,6 @@
     }
   }
 
-  .background2 {
-    background-image: url("../../assets/Form-Hero-Image.jpg");
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: cover;
-    height: 100%;
-    width: 50%;
-    margin-right: 0;
 
 
-  }
 
-  span {
-
-  }
-
-}

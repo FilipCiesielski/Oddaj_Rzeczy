@@ -10,13 +10,13 @@ class Logout extends Component {
     render() {
         return (
             <>
-                <div className={"logoutNav"}><NavigationUser/></div>
-                <section className={"logoutView"}>
-                    <div className={"logout"}>
+                <div className={"navigation__logout"}><NavigationUser/></div>
+                <section className={"logout"}>
+                    <div className={"logout__box"}>
                         <span>Wylogowanie nastąpiło<br/>
                         pomyślnie!</span>
-                        <div className={"deco"}></div>
-                        <div className={"buttons"}>
+                        <div className={"logout__box__decorations"}></div>
+                        <div className={"logout__box--buttons"}>
                             <button type='submit'><NavLink to={"/"}>Strona główna</NavLink></button>
 
                         </div>

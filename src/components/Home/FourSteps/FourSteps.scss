@@ -7,7 +7,8 @@
   justify-content: center;
   align-items: center;
   color: map_get($colors,"darkgrey");
-  .header_organisation{
+
+  .fourSteps__header{
     display: flex;
     height: 13rem;
     align-items: center;
@@ -17,7 +18,7 @@
       font-size: 1.8rem;
       margin-bottom: 2rem;
     }
-    .deco_organisation{
+    .fourSteps__header__decorations{
 
       background-image: url("../../../assets/Decoration.svg");
       width: 100%;
@@ -30,7 +31,7 @@
 
 
   }
-  .bColor {
+  .fourSteps__background {
     width: 100%;
     background-color: map_get($colors, "white");
     display: flex;
@@ -38,7 +39,7 @@
     justify-content: center;
     flex-direction: column;
 
-    .steps_instruction {
+    .fourSteps__column{
       width: 60%;
       height: 18rem;
       display: flex;
@@ -47,7 +48,7 @@
 
     }
 
-    .steps_column {
+    .fourSteps__column__instructions {
       display: flex;
       flex-direction: column;
       text-align: center;
@@ -66,22 +67,22 @@
 
     }
 
-    .icon1 {
+    .fourSteps__column__instructions--icon1 {
       @include backgroundIcon;
       background-image: url("../../../assets/Icon-1.svg")
     }
 
-    .icon2 {
+    .fourSteps__column__instructions--icon2 {
       @include backgroundIcon;
       background-image: url("../../../assets/Icon-2.svg")
     }
 
-    .icon3 {
+    .fourSteps__column__instructions--icon3 {
       @include backgroundIcon;
       background-image: url("../../../assets/Icon-3.svg")
     }
 
-    .icon4 {
+    .fourSteps__column__instructions--icon4 {
       @include backgroundIcon;
       background-image: url("../../../assets/Icon-4.svg")
     }
@@ -114,8 +115,7 @@
     background-color: white;
     font-size: 1.2rem;
     font-family: 'Open Sans', sans-serif;
-    margin: 2rem;
-    margin-bottom: 4rem;
+    margin: 2rem 2rem 4rem 2rem;
     outline: none;
 
     a {

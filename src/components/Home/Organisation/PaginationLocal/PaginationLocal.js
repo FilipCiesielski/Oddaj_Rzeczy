@@ -1,5 +1,4 @@
-import React,{Component} from 'react';
-
+import React, {Component} from 'react';
 
 
 class PaginationLocal extends Component {
@@ -7,9 +6,21 @@ class PaginationLocal extends Component {
         super(props);
         this.state = {
             local: [
-                {title: '"Lorem Ipsum 1"', mission: "Risus in hendrerit gravida rutrum quisque.", givenAway: "Sinto, prendo, questa"},
-                {title: '"Lorem Ipsum 2"', mission: "Ultricies mi eget mauris pharetra et ultrices.", givenAway: "Bento, vintre, sed"},
-                {title: '"Lorem Ipsum 3"', mission: "Sed ullamcorper morbi tincidunt ornare massa eget.", givenAway: "Questas, bonevto, sintas"}
+                {
+                    title: '"Lorem Ipsum 1"',
+                    mission: "Risus in hendrerit gravida rutrum quisque.",
+                    givenAway: "Sinto, prendo, questa"
+                },
+                {
+                    title: '"Lorem Ipsum 2"',
+                    mission: "Ultricies mi eget mauris pharetra et ultrices.",
+                    givenAway: "Bento, vintre, sed"
+                },
+                {
+                    title: '"Lorem Ipsum 3"',
+                    mission: "Sed ullamcorper morbi tincidunt ornare massa eget.",
+                    givenAway: "Questas, bonevto, sintas"
+                }
             ],
             currentPage: 1,
             foundationPerPage: 3,
@@ -39,7 +50,7 @@ class PaginationLocal extends Component {
         const currentFoundations = local.slice(indexOfFirstFoundation, indexOfLastFoundation);
         const renderLocal = currentFoundations.map((local, index) => {
             return (
-                <ul key={index} className="foundationInfo">
+                <ul key={index} className="organisation__footer--foundationInfo">
                     <li><h3>Zbiórka {local.title}</h3> <p>Cel i misja: {local.mission}</p></li>
                     <span>{local.givenAway}</span>
                 </ul>
@@ -48,7 +59,7 @@ class PaginationLocal extends Component {
         return (
             <>
                 {renderLocal}
-                <div className="buttons">
+                <div className="organisation__footer--buttons">
                     <button id={1} className={this.state.border1} onClick={(e) => this.handleClick(e, 1)}>1</button>
                 </div>
             </>

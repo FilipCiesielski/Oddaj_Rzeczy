@@ -10,8 +10,8 @@ class Step3 extends Component {
     render() {
         console.log(this.props.button)
         return (
-            <section className={"teddyForm"}>
-                <div className={"yellowInfo"}>
+            <section className={"teddyBearForm"}>
+                <div className={"teddyBearForm__info"}>
                     <div>
                         <h2>Ważne!</h2>
                         <p>Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też
@@ -19,12 +19,12 @@ class Step3 extends Component {
                             organizacje po ich lokalizacji bądź celu ich pomocy.</p>
                     </div>
                 </div>
-                <div className={"teddyBackground"}>
-                    <span className={"stepsNumber"}>Krok 3/4</span>
-                    <div className={"stepsForm"}>
+                <div className={"teddyBearForm__backgroundPhoto"}>
+                    <span className={"teddyBearForm__numberOfSteps"}>Krok 3/4</span>
+                    <div className={"teddyBearForm__box"}>
                         <h2>Lokalizacja:</h2>
-                        <div className={"bags"}>
-                            <div className={"optionSelect"}>
+
+                            <div className={"teddyBearForm__box__checkbox"}>
                                 <select value={this.props.valueOptionCity} onChange={this.props.handleOnChangeCity}>
                                     <option value="" disabled hidden>-wybierz-</option>
                                     <option value="Poznań">Poznań</option>
@@ -33,11 +33,11 @@ class Step3 extends Component {
                                     <option value="Wrocław">Wrocław</option>
                                     <option value="Katowice">Katowice</option>
                                 </select>
-                                <div className={"optionBrick"}>
+
                                     <h4>Komu chcesz pomóc?</h4>
 
-                                    <div className={"brick"}>
-                                        <div className={"checkBOX"}>
+                                    <div className={"teddyBearForm__box_checkbox__items"}>
+                                        <div className={"teddyBearForm__box_checkbox--options"}>
                                             <input onChange={this.props.handleOnChangeCheckbox} id="lists1"
                                                    type="checkbox"
                                                    value={"dzieciom"} name="lists"/>
@@ -66,11 +66,10 @@ class Step3 extends Component {
                                         </div>
                                         <h6>*zaznacz powyżej</h6>
                                     </div>
-                                </div>
 
-                            </div>
+
                         </div>
-                        <div className={"bagsButtons"}>
+                        <div className={"teddyBearForm__buttons"}>
                             <input onClick={this.props.handleButtonPrev} type={"button"} value='Wstecz'/>
                             <input onClick={this.props.handleButtonNext} type={"button"} value='Dalej'
                                    disabled={this.props.button}/>

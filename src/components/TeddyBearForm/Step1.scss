@@ -1,7 +1,7 @@
 @import "../../scss/settings/colors";
 
 
-  .form {
+  .teddyBearForm__box__radio{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -12,7 +12,7 @@
     input[type="radio"] {
       display: none;
     }
-    .container1 {
+    .teddyBearForm__box__radio--items {
       display: flex;
       position: relative;
       padding-left: 35px;
@@ -24,7 +24,7 @@
       -ms-user-select: none;
       user-select: none;
     }
-    .container input {
+    .teddyBearForm__box__radio--items input {
       position: absolute;
       opacity: 0;
       cursor: pointer;
@@ -39,10 +39,10 @@
       background: none;
       border: 1px solid map_get($colors, "darkgrey");
     }
-    .container1:hover input ~ .checkmark {
+    .teddyBearForm__box__radio--items:hover input ~ .checkmark {
       background-color: map_get($colors, "yellow");
     }
-    .container1 input:checked ~ .checkmark {
+    .teddyBearForm__box__radio--items input:checked ~ .checkmark {
       background-color: map_get($colors, "yellow");
     }
     .checkmark:after {
@@ -50,7 +50,7 @@
       position: absolute;
       display: none;
     }
-    .container1 input:checked ~ .checkmark:after {
+    .teddyBearForm__box__radio--items input:checked ~ .checkmark:after {
       display: block;
     }
 }

@@ -70,17 +70,17 @@ class LoginFirebase extends Component {
     render() {
         return (
             <>
-                <section className={"wraper"}>
-                    <div className={"loginNav"}><NavigationUser/></div>
-                    <section className={"loginView"}>
-                        <div className={"loginForm"}>
+                <section className={"jumbotron"}>
+                    <div className={"navigation__login"}><NavigationUser/></div>
+                    <section className={"login"}>
+                        <div className={"login__box"}>
                             <span>Zaloguj się</span>
-                            <div className={"deco"}></div>
-                            <form onSubmit={this.handleOnSubmit}>
+                            <div className={"login__box__decorations"}></div>
+                            <form className={"login__form"} onSubmit={this.handleOnSubmit}>
 
-                                <div className={"inputs"}>
+                                <div className={"login__form__items"}>
 
-                                    <label className={"loginInput"}>Email
+                                    <label className={"login__form--inputs"}>Email
                                         <input type="email" name="email" value={this.state.email}
                                                onChange={this.handleOnChange}/>
                                         {this.state.errEmail &&
@@ -89,7 +89,7 @@ class LoginFirebase extends Component {
                                         <span className="errorMessage" style={{color: 'red'}}>Podany email lub hasło jest nieprawidłowe!</span>}
                                     </label>
 
-                                    <label className={"loginInput"}>Hasło
+                                    <label className={"login__form--inputs"}>Hasło
                                         <input type="password" name="password" value={this.state.password}
                                                onChange={this.handleOnChange}/>
                                         {this.state.errPsw &&
@@ -101,7 +101,7 @@ class LoginFirebase extends Component {
 
 
                                 </div>
-                                <div className={"buttons"}>
+                                <div className={"login__form--buttons"}>
                                     <NavLink to={"/rejestracja"}>Załóż
                                         konto</NavLink>
                                     <input type='submit' value='Zaloguj' className={"buttonStyle"}/>

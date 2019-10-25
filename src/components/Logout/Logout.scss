@@ -1,10 +1,10 @@
 @import "../../scss/settings/colors";
 
-.logoutNav {
+.navigation__logout {
   margin-right: 10%;
 }
 
-.logoutView {
+.logout {
   margin-top: 2rem;
   height: 100%;
   width: 100%;
@@ -13,7 +13,7 @@
   align-items: center;
 
 
-  .logout {
+  .logout__box {
 
     width: 20%;
     display: flex;
@@ -31,7 +31,7 @@
 
     }
 
-    .deco {
+    .logout__box__decorations {
       background-image: url("../../assets/Decoration.svg");
       width: 60%;
       height: 2rem;
@@ -42,7 +42,7 @@
       display: flex;
     }
 
-    .buttons {
+    .logout__box--buttons {
       width: 100%;
       display: flex;
       justify-content: center;
