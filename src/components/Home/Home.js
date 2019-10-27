@@ -5,7 +5,7 @@ import ThreeColumns from "./ThreeColumns/ThreeColumns";
 import About from "./About/About";
 import FourSteps from "./FourSteps/FourSteps";
 import Contact from "./Contact/Contact";
-import Organisation from "./Organisation/Organisation";
+import Organization from "./Organization/Organization";
 
 class Home extends Component {
     render() {
@@ -16,7 +16,7 @@ class Home extends Component {
                     <ThreeColumns/>
                     <FourSteps/>
                     <About/>
-                    <Organisation/>
+                    <Organization/>
                     <Contact/>
                 </section>
             </>

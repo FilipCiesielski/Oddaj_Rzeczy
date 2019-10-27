@@ -1,19 +1,19 @@
 @import "../../../scss/settings/colors";
 
-.contactFooter {
+.contact__footer {
   height: 3rem;
   width: 50%;
   display: flex;
   justify-content: space-between;
 
 
-  .copyrightText{
+  .contact__copyrightText{
    }
-  .logo{
+  .contact__logos{
     display: flex;
     margin-right:30%;
 
-  .facebook{
+  .contact__facebookLogo{
 
     background: url("../../../assets/Facebook.svg") no-repeat;
     width: 2rem;
@@ -21,7 +21,7 @@
     background-size: contain;
 
   }
-  .instagram {
+  .contact__instagramLogo {
     background: url("../../../assets/Instagram.svg") no-repeat;
     width: 2rem;
     height: 2rem;

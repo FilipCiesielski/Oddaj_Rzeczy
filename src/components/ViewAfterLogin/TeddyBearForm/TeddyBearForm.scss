@@ -1,4 +1,4 @@
-@import "../../scss/settings/colors";
+@import "../../../scss/settings/colors";
 
 .teddyBearForm {
 
@@ -29,7 +29,7 @@
   }
   .teddyBearForm__backgroundPhoto {
     width: 100%;
-    background-image: url("../../assets/Background-Form.jpg");
+    background-image: url("../../../assets/Background-Form.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

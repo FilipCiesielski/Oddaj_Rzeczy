@@ -65,31 +65,31 @@ class Contact extends Component {
     render() {
         return (
             <section name={"Contact"} className={"contact"}>
-                <div className={"contactForm"}>
+                <div className={"contact__box"}>
                     <span>Skontaktuj się z nami</span>
-                    <div className={"deco"}></div>
+                    <div className={"contact__box__decorations"}></div>
                     {this.state.formSend &&
-                    <span className="successMessage" style={{color: 'green'}}>Wiadomość została wysłana!<br/>
+                    <span className="contact__box__successMessage" style={{color: 'green'}}>Wiadomość została wysłana!<br/>
                         Wkrótce się skontaktujemy.</span>}
                     <form onSubmit={this.handleOnSubmit}>
-                        <div>
-                            <label className={"labelInput"}>Wpisz swoje imię
+                        <div className={"contact__box__form"}>
+                            <label>Wpisz swoje imię
                                 <input type="text" name="name" value={this.state.name} onChange={this.handleOnChange}
                                        placeholder="Krzysztof"/>
                                 {this.state.errName && <span className="errorMessage" style={{color: 'red'}}>Podane imię jest nieprawidłowe!</span>}
                             </label>
-                            <label className={"labelInput"}>Wpisz swój email
+                            <label>Wpisz swój email
                                 <input type="email" name="email" value={this.state.email} onChange={this.handleOnChange}
                                        placeholder="abc@xyz.com"/>
                                 {this.state.errEmail && <span className="errorMessage" style={{color: 'red'}}>Podany email jest nieprawidłowy!</span>}
                             </label>
                         </div>
-                        <label className={"labelText"}>Wpisz swoją wiadomość
+                        <label>Wpisz swoją wiadomość
                             <textarea rows="4" cols="30" name="message" value={this.state.message}
                                       onChange={this.handleOnChange} maxLength={"4000"}
                                       placeholder="Liquorice marshmallow jelly-o gummi bears lollipop cake cupcake brownie marzipan. Dessert ice cream muffin lollipop. Donut gummies jelly beans pie wafer tiramisu."/>
                             {this.state.errMessage &&
-                            <span className="errorMessage" style={{color: 'red'}}>Wiadomośc musi mieć conajmniej 120 znaków!</span>}
+                            <span className="contact__box__errorMessage" style={{color: 'red'}}>Wiadomośc musi mieć conajmniej 120 znaków!</span>}
                         </label>
                         <input type='submit' value='Wyślij'/>
                     </form>

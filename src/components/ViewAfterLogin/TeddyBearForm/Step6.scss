@@ -1,4 +1,4 @@
-@import "../../scss/settings/colors";
+@import "../../../scss/settings/colors";
 
 .teddyBearForm__goodbye {
   display: flex;
@@ -16,7 +16,7 @@
     font-size: 2rem;
   }
   .teddyBearForm__goodbye__decorations {
-    background-image: url("../../assets/Decoration.svg");
+    background-image: url("../../../assets/Decoration.svg");
     width: 18%;
     height: 2rem;
     margin-top: 1rem;

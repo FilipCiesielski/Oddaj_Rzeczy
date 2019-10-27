@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import "./HeaderAfterLogin.scss"
 
-import NavigationAfterLogin from "../Navigation/NavigationAfterLogin";
+import NavigationAfterLogin from "../../Navigation/NavigationAfterLogin";
 
 
 class HeaderAfterLogin extends Component{

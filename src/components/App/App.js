@@ -7,9 +7,9 @@ import Registration from "../Registration/Registration";
 import Login from "../Login/Login";
 import Logout from "../Logout/Logout";
 import FourSteps from "../Home/FourSteps/FourSteps";
-import FormAfterLogin from "../FormAfterLogin/FormAfterLogin";
+import FormAfterLogin from "../ViewAfterLogin/FormAfterLogin/FormAfterLogin";
 import About from "../Home/About/About";
-import Organisation from "../Home/Organisation/Organisation";
+import Organization from "../Home/Organization/Organization";
 
 class  App extends Component{
 
@@ -25,7 +25,7 @@ class  App extends Component{
                     <Route path={"/wylogowano"} component={Logout}/>
                     <Route path={"/FourSteps"} component={FourSteps}/>
                     <Route path={"/About"} component={About}/>
-                    <Route path={"/Organisation"} component={Organisation}/>
+                    <Route path={"/Organization"} component={Organization}/>
 
                     <Route path={"/oddaj-rzeczy"} component={FormAfterLogin}/>
 

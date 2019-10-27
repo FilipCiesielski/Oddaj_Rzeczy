@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import TeddyBearForm from "../TeddyBearForm/TeddyBearForm";
-import Contact from "../Home/Contact/Contact";
+import Contact from "../../Home/Contact/Contact";
 import HeaderAfterLogin from "../HeaderAfterLogin/HeaderAfterLogin";
 
 

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import "./Organisation.scss"
 import PaginationFoundation from "./PaginationFoundation/PaginationFoundation";
-import PaginationOrganisation from "./PaginationOrganisation/PaginationOrganisation";
+import PaginationOrganization from "./PaginationOrganization/PaginationOrganization";
 import PaginationLocal from "./PaginationLocal/PaginationLocal";
 
 const spanFundation = <p className={"selectText"}>Nori grape silver beet broccoli kombu beet greans fava bean potato
@@ -16,7 +16,7 @@ const spanLocal = <p className={"selectText"}>Bunya nuts black-eyed pea. Nori gr
     grape silver beet broccoli kombu beet greans fava bean potato quandong celery . </p>;
 
 
-class Organisation extends Component {
+class Organization extends Component {
     state = {
         foundation: true,
         organisation: false,
@@ -88,7 +88,7 @@ class Organisation extends Component {
                         {this.state.foundation && <PaginationFoundation/>}
                     </div>
                     <div>
-                        {this.state.organisation && <PaginationOrganisation/>}
+                        {this.state.organisation && <PaginationOrganization/>}
                     </div>
                     <div>
                         {this.state.local && <PaginationLocal/>}
@@ -102,4 +102,4 @@ class Organisation extends Component {
 }
 
 
-export default Organisation;
+export default Organization;

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 
-class PaginationOrganisation extends Component {
+class PaginationOrganization extends Component {
 
 
     constructor(props) {
@@ -100,4 +100,4 @@ class PaginationOrganisation extends Component {
     }
 }
 
-export default PaginationOrganisation;
+export default PaginationOrganization;

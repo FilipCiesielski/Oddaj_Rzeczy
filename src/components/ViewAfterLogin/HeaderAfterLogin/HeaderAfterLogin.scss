@@ -1,4 +1,4 @@
-@import "../../scss/settings/colors";
+@import "../../../scss/settings/colors";
 
 
 .headerAfterLogin {
@@ -9,7 +9,7 @@
   margin-right: 10%;
 
   .headerAfterLogin__backgroundPhoto{
-    background-image: url("../../assets/Form-Hero-Image.jpg");
+    background-image: url("../../../assets/Form-Hero-Image.jpg");
     background-repeat: no-repeat;
     background-position: right;
     background-size: cover;
@@ -28,7 +28,7 @@
 
 
   .headerAfterLogin__main__decorations {
-    background-image: url("../../assets/Decoration.svg");
+    background-image: url("../../../assets/Decoration.svg");
     width: 100%;
     height: 2rem;
     margin-top: 1rem;
