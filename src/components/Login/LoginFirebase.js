@@ -48,7 +48,7 @@ class LoginFirebase extends Component {
                 .doSignInWithEmailAndPassword(email, psw)
                 .then(authUser => {
                     sessionStorage.setItem("email", `${this.state.email}`);
-                    this.setState({email: "", password: "",});
+                    this.setState({email: "", password: "",errPsw2: errPsw2});
                     this.props.history.push("/oddaj-rzeczy");
 
                 })
@@ -56,8 +56,9 @@ class LoginFirebase extends Component {
 
                     if (error.code === "auth/wrong-password") {
                         errPsw2 = true;
-
+                        console.log('ndz auth')
                     }
+
                     this.setState({errPsw2: errPsw2});
                 });
         }
