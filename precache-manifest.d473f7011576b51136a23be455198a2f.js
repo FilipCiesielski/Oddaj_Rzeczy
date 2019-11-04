@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8ca20817e16593ba525b30e67fef9284",
+    "revision": "3acb073778e3ed2ed48c1ca0642fac53",
     "url": "/Project_Oddaj_Rzeczy_React/index.html"
   },
   {
