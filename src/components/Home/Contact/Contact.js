@@ -76,12 +76,12 @@ class Contact extends Component {
                             <label>Wpisz swoje imię
                                 <input type="text" name="name" value={this.state.name} onChange={this.handleOnChange}
                                        placeholder="Krzysztof"/>
-                                {this.state.errName && <span className="errorMessage" style={{color: 'red'}}>Podane imię jest nieprawidłowe!</span>}
+                                {this.state.errName && <span className="contact__box__errorMessage" style={{color: 'red'}}>Podane imię jest nieprawidłowe!</span>}
                             </label>
                             <label>Wpisz swój email
                                 <input type="email" name="email" value={this.state.email} onChange={this.handleOnChange}
                                        placeholder="abc@xyz.com"/>
-                                {this.state.errEmail && <span className="errorMessage" style={{color: 'red'}}>Podany email jest nieprawidłowy!</span>}
+                                {this.state.errEmail && <span className="contact__box__errorMessage" style={{color: 'red'}}>Podany email jest nieprawidłowy!</span>}
                             </label>
                         </div>
                         <label>Wpisz swoją wiadomość
