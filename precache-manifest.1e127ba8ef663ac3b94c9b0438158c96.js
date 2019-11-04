@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d01805d7ea454796e6711ce4a8559a5c",
+    "revision": "1ef624eba98cc5df2bfabf0dc39cfa43",
     "url": "/Project_Oddaj_Rzeczy_React/index.html"
   },
   {
-    "revision": "3acbf637b5359e0cb941",
+    "revision": "f87893665f9d7960a969",
     "url": "/Project_Oddaj_Rzeczy_React/static/css/main.d0ec0cb7.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Project_Oddaj_Rzeczy_React/static/js/2.546eeae5.chunk.js"
   },
   {
-    "revision": "3acbf637b5359e0cb941",
-    "url": "/Project_Oddaj_Rzeczy_React/static/js/main.cb244d90.chunk.js"
+    "revision": "f87893665f9d7960a969",
+    "url": "/Project_Oddaj_Rzeczy_React/static/js/main.bc67fa61.chunk.js"
   },
   {
     "revision": "0e95d8c8312b9502caa7",

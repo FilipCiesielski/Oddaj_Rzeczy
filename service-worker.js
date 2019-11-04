@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Project_Oddaj_Rzeczy_React/precache-manifest.d7c34831576f92c283358a960e9f0b78.js"
+  "/Project_Oddaj_Rzeczy_React/precache-manifest.1e127ba8ef663ac3b94c9b0438158c96.js"
 );
 
 self.addEventListener('message', (event) => {
