@@ -12,8 +12,7 @@ class Step2 extends Component{
                 <div className={"teddyBearForm__info"}>
                     <div>
                         <h2>Ważne!</h2>
-                        <p>Wszystkie rzeczy do spakowania zapakuj w 60l worki. Dokładną instrukcję jak spakować worki dostaniesz <a
-                            href={""}>TUTAJ</a></p>
+                        <p>Wszystkie rzeczy do spakowania zapakuj w 60l worki. Dokładną instrukcję jak spakować worki dostaniesz  TUTAJ</p>
                     </div>
                 </div>
                 <div className={"teddyBearForm__backgroundPhoto"}>
