@@ -1,4 +1,4 @@
-The goal of the project is to create places where everyone can give unnecessary items to trusted institutions. The project will be available on the Internet with a simple form that will facilitate the handling of strange things. 
+The goal of the project is to create a place where everyone can give unnecessary items to trusted institutions.  The project will be a ** website ** with a simple form that will make it easier for users to donate items. At this stage of the project: all views are ready, you can register and login, after login you will go to the next page.
 
 you can register:
 enter email
